@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Shpeeboppin.png">
+	<!-- Created with Adobe Animate version 21.0.7.42652 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Bop0000" x="0" y="0" width="281" height="589" frameX="0" frameY="-45" frameWidth="281" frameHeight="636"/>
+	<SubTexture name="Bop0001" x="0" y="0" width="281" height="589" frameX="0" frameY="-45" frameWidth="281" frameHeight="636"/>
+	<SubTexture name="Bop0002" x="281" y="0" width="259" height="625" frameX="-12" frameY="-11" frameWidth="281" frameHeight="636"/>
+	<SubTexture name="Bop0003" x="281" y="0" width="259" height="625" frameX="-12" frameY="-11" frameWidth="281" frameHeight="636"/>
+	<SubTexture name="Bop0004" x="281" y="0" width="259" height="625" frameX="-12" frameY="-11" frameWidth="281" frameHeight="636"/>
+	<SubTexture name="Bop0005" x="281" y="0" width="259" height="625" frameX="-12" frameY="-11" frameWidth="281" frameHeight="636"/>
+	<SubTexture name="Bop0006" x="540" y="0" width="259" height="636" frameX="-12" frameY="0" frameWidth="281" frameHeight="636"/>
+	<SubTexture name="Bop0007" x="540" y="0" width="259" height="636" frameX="-12" frameY="0" frameWidth="281" frameHeight="636"/>
+	<SubTexture name="Bop0008" x="540" y="0" width="259" height="636" frameX="-12" frameY="0" frameWidth="281" frameHeight="636"/>
+	<SubTexture name="Bop0009" x="540" y="0" width="259" height="636" frameX="-12" frameY="0" frameWidth="281" frameHeight="636"/>
+	<SubTexture name="Bop0010" x="540" y="0" width="259" height="636" frameX="-12" frameY="0" frameWidth="281" frameHeight="636"/>
+	<SubTexture name="Bop0011" x="540" y="0" width="259" height="636" frameX="-12" frameY="0" frameWidth="281" frameHeight="636"/>
+	<SubTexture name="Bop0012" x="540" y="0" width="259" height="636" frameX="-12" frameY="0" frameWidth="281" frameHeight="636"/>
+	<SubTexture name="Bop0013" x="540" y="0" width="259" height="636" frameX="-12" frameY="0" frameWidth="281" frameHeight="636"/>
+	<SubTexture name="Bop0014" x="540" y="0" width="259" height="636" frameX="-12" frameY="0" frameWidth="281" frameHeight="636"/>
+</TextureAtlas>
