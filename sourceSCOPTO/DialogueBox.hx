@@ -309,7 +309,7 @@ class DialogueBox extends FlxSpriteGroup
 
 		dropText = new FlxText(242, 502, Std.int(FlxG.width * 0.6), "", 32);
 		dropText.font = 'VCR OSD Mono';
-		dropText.color = 0xFFEDEDED;
+		dropText.color = 0x00000000;
 		add(dropText);
 
 		swagDialogue = new FlxTypeText(240, 500, Std.int(FlxG.width * 0.6), "", 32);
