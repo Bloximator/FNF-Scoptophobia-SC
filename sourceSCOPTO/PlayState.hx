@@ -459,12 +459,12 @@ class PlayState extends MusicBeatState
 				dad.x -= 50;
 				dad.y -= 215;
 			case 'alife':
-				camPos.y -= 200;
-				camPos.x += 200;
 				dad.x -= 50;
-				dad.y -= 215;
+				dad.y -= 20;
 			case 'bloximator':
-				dad.y -= 100;	
+				dad.y -= 100;
+			case 'clone':
+				dad.y -= 100;
 		}
 		
 		boyfriend = new Boyfriend(770, 450, SONG.player1);
@@ -508,7 +508,20 @@ class PlayState extends MusicBeatState
 				gf.y += 300;
 			case 'street':
 				gf.x += 350;
-				gf.y += -140;	
+				gf.y += -140;
+			case 'streetclone':
+				if(FlxG.save.data.distractions){
+				// trailArea.scrollFactor.set();
+				var evilTrail = new FlxTrail(dad, null, 4, 24, 0.3, 0.069);
+				// evilTrail.changeValuesEnabled(false, false, false, false);
+				// evilTrail.changeGraphic()
+				add(evilTrail);
+				// evilTrail.scrollFactor.set(1.1, 1.1);
+				}
+
+
+				gf.x += 350;
+				gf.y += -140;
 		}
 
 		add(gf);

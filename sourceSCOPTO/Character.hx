@@ -539,7 +539,7 @@ class Character extends FlxSprite
 				updateHitbox();
 				
 			case 'alife':
-				
+			
 				tex = Paths.getSparrowAtlas('scopto/ALIFE');
 				frames = tex;
 				animation.addByPrefix('idle', 'Idle', 24);
@@ -556,7 +556,7 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 				
-				setGraphicSize(Std.int(width * 0.8));
+				setGraphicSize(Std.int(width * 0.95));
 				updateHitbox();
 				
 			 case 'clone':
