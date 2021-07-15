@@ -500,7 +500,7 @@ class Character extends FlxSprite
 				playAnim('idle');
 				
 		  case 'bloximator':
-                
+				// FUCKFUCFUCKFUCKFUCKFUCKDICKDICKDICKSHIETSHIETSHIET
                 tex = Paths.getSparrowAtlas('scopto/bloxiam', 'shared');
                 frames = tex;
                 animation.addByPrefix('idle', 'Idle', 24);
