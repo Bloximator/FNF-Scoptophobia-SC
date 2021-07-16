@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="shpee portraits.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Shpee akward enter0000" x="0" y="0" width="258" height="366" frameX="0" frameY="-7" frameWidth="261" frameHeight="377"/>
+	<SubTexture name="Shpee akward enter0001" x="258" y="0" width="254" height="373" frameX="-6" frameY="-3" frameWidth="261" frameHeight="377"/>
+	<SubTexture name="Shpee akward enter0002" x="512" y="0" width="252" height="377" frameX="-9" frameY="0" frameWidth="261" frameHeight="377"/>
+	<SubTexture name="Shpee akward enter0003" x="764" y="0" width="253" height="376" frameX="-8" frameY="-1" frameWidth="261" frameHeight="377"/>
+	<SubTexture name="Shpee akward enter0004" x="1017" y="0" width="253" height="374" frameX="-7" frameY="-2" frameWidth="261" frameHeight="377"/>
+	<SubTexture name="Shpee akward enter0005" x="1270" y="0" width="253" height="374" frameX="-7" frameY="-2" frameWidth="261" frameHeight="377"/>
+	<SubTexture name="Shpee akward enter0006" x="1017" y="0" width="253" height="374" frameX="-7" frameY="-2" frameWidth="261" frameHeight="377"/>
+	<SubTexture name="Shpee akward enter0007" x="1523" y="0" width="253" height="375" frameX="-7" frameY="-2" frameWidth="261" frameHeight="377"/>
+	<SubTexture name="Shpee akward enter0008" x="1523" y="0" width="253" height="375" frameX="-7" frameY="-2" frameWidth="261" frameHeight="377"/>
+	<SubTexture name="Shpee akward enter0009" x="1776" y="0" width="253" height="374" frameX="-7" frameY="-2" frameWidth="261" frameHeight="377"/>
+	<SubTexture name="Shpee akward enter0010" x="1776" y="0" width="253" height="374" frameX="-7" frameY="-2" frameWidth="261" frameHeight="377"/>
+	<SubTexture name="Shpee akward enter0011" x="1776" y="0" width="253" height="374" frameX="-7" frameY="-2" frameWidth="261" frameHeight="377"/>
+	<SubTexture name="Shpee akward enter0012" x="1776" y="0" width="253" height="374" frameX="-7" frameY="-2" frameWidth="261" frameHeight="377"/>
+	<SubTexture name="Shpee akward enter0013" x="1776" y="0" width="253" height="374" frameX="-7" frameY="-2" frameWidth="261" frameHeight="377"/>
+	<SubTexture name="Shpee akward enter0014" x="1776" y="0" width="253" height="374" frameX="-7" frameY="-2" frameWidth="261" frameHeight="377"/>
+	<SubTexture name="Shpee akward enter0015" x="1776" y="0" width="253" height="374" frameX="-7" frameY="-2" frameWidth="261" frameHeight="377"/>
+	<SubTexture name="Shpee akward enter0016" x="1776" y="0" width="253" height="374" frameX="-7" frameY="-2" frameWidth="261" frameHeight="377"/>
+	<SubTexture name="Shpee akward enter0017" x="1776" y="0" width="253" height="374" frameX="-7" frameY="-2" frameWidth="261" frameHeight="377"/>
+	<SubTexture name="Shpee akward enter0018" x="1776" y="0" width="253" height="374" frameX="-7" frameY="-2" frameWidth="261" frameHeight="377"/>
+	<SubTexture name="Shpee akward enter0019" x="1776" y="0" width="253" height="374" frameX="-7" frameY="-2" frameWidth="261" frameHeight="377"/>
+	<SubTexture name="Shpee enter0000" x="2029" y="0" width="230" height="391" frameX="0" frameY="0" frameWidth="241" frameHeight="391"/>
+	<SubTexture name="Shpee enter0001" x="2029" y="0" width="230" height="391" frameX="-4" frameY="0" frameWidth="241" frameHeight="391"/>
+	<SubTexture name="Shpee enter0002" x="2029" y="0" width="230" height="391" frameX="-6" frameY="0" frameWidth="241" frameHeight="391"/>
+	<SubTexture name="Shpee enter0003" x="2029" y="0" width="230" height="391" frameX="-8" frameY="0" frameWidth="241" frameHeight="391"/>
+	<SubTexture name="Shpee enter0004" x="2029" y="0" width="230" height="391" frameX="-9" frameY="0" frameWidth="241" frameHeight="391"/>
+	<SubTexture name="Shpee enter0005" x="2029" y="0" width="230" height="391" frameX="-10" frameY="0" frameWidth="241" frameHeight="391"/>
+	<SubTexture name="Shpee enter0006" x="2029" y="0" width="230" height="391" frameX="-11" frameY="0" frameWidth="241" frameHeight="391"/>
+	<SubTexture name="Shpee enter0007" x="2029" y="0" width="230" height="391" frameX="-11" frameY="0" frameWidth="241" frameHeight="391"/>
+	<SubTexture name="Shpee enter0008" x="2029" y="0" width="230" height="391" frameX="-11" frameY="0" frameWidth="241" frameHeight="391"/>
+	<SubTexture name="Shpee enter0009" x="2029" y="0" width="230" height="391" frameX="-11" frameY="0" frameWidth="241" frameHeight="391"/>
+	<SubTexture name="Shpee enter0010" x="2029" y="0" width="230" height="391" frameX="-11" frameY="0" frameWidth="241" frameHeight="391"/>
+	<SubTexture name="Shpee enter0011" x="2029" y="0" width="230" height="391" frameX="-11" frameY="0" frameWidth="241" frameHeight="391"/>
+	<SubTexture name="Shpee enter0012" x="2029" y="0" width="230" height="391" frameX="-11" frameY="0" frameWidth="241" frameHeight="391"/>
+	<SubTexture name="Shpee enter0013" x="2029" y="0" width="230" height="391" frameX="-11" frameY="0" frameWidth="241" frameHeight="391"/>
+	<SubTexture name="Shpee enter0014" x="2029" y="0" width="230" height="391" frameX="-11" frameY="0" frameWidth="241" frameHeight="391"/>
+	<SubTexture name="Shpee enter0015" x="2029" y="0" width="230" height="391" frameX="-11" frameY="0" frameWidth="241" frameHeight="391"/>
+	<SubTexture name="Shpee enter0016" x="2029" y="0" width="230" height="391" frameX="-11" frameY="0" frameWidth="241" frameHeight="391"/>
+	<SubTexture name="Shpee enter0017" x="2029" y="0" width="230" height="391" frameX="-11" frameY="0" frameWidth="241" frameHeight="391"/>
+	<SubTexture name="Shpee enter0018" x="2029" y="0" width="230" height="391" frameX="-11" frameY="0" frameWidth="241" frameHeight="391"/>
+	<SubTexture name="Shpee enter0019" x="2029" y="0" width="230" height="391" frameX="-11" frameY="0" frameWidth="241" frameHeight="391"/>
+	<SubTexture name="Shpee excited enter0000" x="2259" y="0" width="232" height="393" frameX="0" frameY="0" frameWidth="246" frameHeight="393"/>
+	<SubTexture name="Shpee excited enter0001" x="2259" y="0" width="232" height="393" frameX="-5" frameY="0" frameWidth="246" frameHeight="393"/>
+	<SubTexture name="Shpee excited enter0002" x="2259" y="0" width="232" height="393" frameX="-8" frameY="0" frameWidth="246" frameHeight="393"/>
+	<SubTexture name="Shpee excited enter0003" x="2259" y="0" width="232" height="393" frameX="-10" frameY="0" frameWidth="246" frameHeight="393"/>
+	<SubTexture name="Shpee excited enter0004" x="2259" y="0" width="232" height="393" frameX="-12" frameY="0" frameWidth="246" frameHeight="393"/>
+	<SubTexture name="Shpee excited enter0005" x="2259" y="0" width="232" height="393" frameX="-13" frameY="0" frameWidth="246" frameHeight="393"/>
+	<SubTexture name="Shpee excited enter0006" x="2259" y="0" width="232" height="393" frameX="-14" frameY="0" frameWidth="246" frameHeight="393"/>
+	<SubTexture name="Shpee excited enter0007" x="2259" y="0" width="232" height="393" frameX="-14" frameY="0" frameWidth="246" frameHeight="393"/>
+	<SubTexture name="Shpee excited enter0008" x="2259" y="0" width="232" height="393" frameX="-14" frameY="0" frameWidth="246" frameHeight="393"/>
+	<SubTexture name="Shpee excited enter0009" x="2259" y="0" width="232" height="393" frameX="-14" frameY="0" frameWidth="246" frameHeight="393"/>
+	<SubTexture name="Shpee excited enter0010" x="2259" y="0" width="232" height="393" frameX="-14" frameY="0" frameWidth="246" frameHeight="393"/>
+	<SubTexture name="Shpee excited enter0011" x="2259" y="0" width="232" height="393" frameX="-14" frameY="0" frameWidth="246" frameHeight="393"/>
+	<SubTexture name="Shpee excited enter0012" x="2259" y="0" width="232" height="393" frameX="-14" frameY="0" frameWidth="246" frameHeight="393"/>
+	<SubTexture name="Shpee excited enter0013" x="2259" y="0" width="232" height="393" frameX="-14" frameY="0" frameWidth="246" frameHeight="393"/>
+	<SubTexture name="Shpee excited enter0014" x="2259" y="0" width="232" height="393" frameX="-14" frameY="0" frameWidth="246" frameHeight="393"/>
+	<SubTexture name="Shpee excited enter0015" x="2259" y="0" width="232" height="393" frameX="-14" frameY="0" frameWidth="246" frameHeight="393"/>
+	<SubTexture name="Shpee excited enter0016" x="2259" y="0" width="232" height="393" frameX="-14" frameY="0" frameWidth="246" frameHeight="393"/>
+	<SubTexture name="Shpee excited enter0017" x="2259" y="0" width="232" height="393" frameX="-14" frameY="0" frameWidth="246" frameHeight="393"/>
+	<SubTexture name="Shpee excited enter0018" x="2259" y="0" width="232" height="393" frameX="-14" frameY="0" frameWidth="246" frameHeight="393"/>
+	<SubTexture name="Shpee excited enter0019" x="2259" y="0" width="232" height="393" frameX="-14" frameY="0" frameWidth="246" frameHeight="393"/>
+	<SubTexture name="Shpee tired enter0000" x="2491" y="0" width="244" height="391" frameX="0" frameY="0" frameWidth="250" frameHeight="391"/>
+	<SubTexture name="Shpee tired enter0001" x="2491" y="0" width="244" height="391" frameX="-1" frameY="0" frameWidth="250" frameHeight="391"/>
+	<SubTexture name="Shpee tired enter0002" x="2491" y="0" width="244" height="391" frameX="-3" frameY="0" frameWidth="250" frameHeight="391"/>
+	<SubTexture name="Shpee tired enter0003" x="2491" y="0" width="244" height="391" frameX="-4" frameY="0" frameWidth="250" frameHeight="391"/>
+	<SubTexture name="Shpee tired enter0004" x="2491" y="0" width="244" height="391" frameX="-4" frameY="0" frameWidth="250" frameHeight="391"/>
+	<SubTexture name="Shpee tired enter0005" x="2491" y="0" width="244" height="391" frameX="-5" frameY="0" frameWidth="250" frameHeight="391"/>
+	<SubTexture name="Shpee tired enter0006" x="2491" y="0" width="244" height="391" frameX="-5" frameY="0" frameWidth="250" frameHeight="391"/>
+	<SubTexture name="Shpee tired enter0007" x="2491" y="0" width="244" height="391" frameX="-5" frameY="0" frameWidth="250" frameHeight="391"/>
+	<SubTexture name="Shpee tired enter0008" x="2491" y="0" width="244" height="391" frameX="-5" frameY="0" frameWidth="250" frameHeight="391"/>
+	<SubTexture name="Shpee tired enter0009" x="2491" y="0" width="244" height="391" frameX="-5" frameY="0" frameWidth="250" frameHeight="391"/>
+	<SubTexture name="Shpee tired enter0010" x="2491" y="0" width="244" height="391" frameX="-6" frameY="0" frameWidth="250" frameHeight="391"/>
+	<SubTexture name="Shpee tired enter0011" x="2491" y="0" width="244" height="391" frameX="-6" frameY="0" frameWidth="250" frameHeight="391"/>
+	<SubTexture name="Shpee tired enter0012" x="2491" y="0" width="244" height="391" frameX="-6" frameY="0" frameWidth="250" frameHeight="391"/>
+	<SubTexture name="Shpee tired enter0013" x="2491" y="0" width="244" height="391" frameX="-6" frameY="0" frameWidth="250" frameHeight="391"/>
+	<SubTexture name="Shpee tired enter0014" x="2491" y="0" width="244" height="391" frameX="-6" frameY="0" frameWidth="250" frameHeight="391"/>
+	<SubTexture name="Shpee tired enter0015" x="2491" y="0" width="244" height="391" frameX="-6" frameY="0" frameWidth="250" frameHeight="391"/>
+	<SubTexture name="Shpee tired enter0016" x="2491" y="0" width="244" height="391" frameX="-6" frameY="0" frameWidth="250" frameHeight="391"/>
+	<SubTexture name="Shpee tired enter0017" x="2491" y="0" width="244" height="391" frameX="-6" frameY="0" frameWidth="250" frameHeight="391"/>
+	<SubTexture name="Shpee tired enter0018" x="2491" y="0" width="244" height="391" frameX="-6" frameY="0" frameWidth="250" frameHeight="391"/>
+	<SubTexture name="Shpee tired enter0019" x="2491" y="0" width="244" height="391" frameX="-6" frameY="0" frameWidth="250" frameHeight="391"/>
+</TextureAtlas>
