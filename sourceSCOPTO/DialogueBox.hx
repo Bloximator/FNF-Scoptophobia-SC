@@ -172,7 +172,7 @@ class DialogueBox extends FlxSpriteGroup
 	if (PlayState.SONG.song.toLowerCase() == 'gloomy-streets')
 	{
 		portraitLeft = new FlxSprite(0, 0);
-		portraitLeft.frames = Paths.getSparrowAtlas('scopto/alife_portraits');
+		portraitLeft.frames = Paths.getSparrowAtlas('scopto/alife portraits');
 		portraitLeft.animation.addByPrefix('enter', 'alife enter', 24, false);
 		portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0));
 		portraitLeft.updateHitbox();
@@ -183,7 +183,7 @@ class DialogueBox extends FlxSpriteGroup
 	if (PlayState.SONG.song.toLowerCase() == 'taking-matters')
 	{
 		portraitLeft = new FlxSprite(0, 0);
-		portraitLeft.frames = Paths.getSparrowAtlas('scopto/alife_portraits');
+		portraitLeft.frames = Paths.getSparrowAtlas('scopto/alife portraits');
 		portraitLeft.animation.addByPrefix('enter', 'alife enter', 24, false);
 		portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0));
 		portraitLeft.updateHitbox();
@@ -194,7 +194,7 @@ class DialogueBox extends FlxSpriteGroup
 	if (PlayState.SONG.song.toLowerCase() == 'the-clone')
 	{
 		portraitLeft = new FlxSprite(0, 0);
-		portraitLeft.frames = Paths.getSparrowAtlas('scopto/alife_portraits');
+		portraitLeft.frames = Paths.getSparrowAtlas('scopto/alife portraits');
 		portraitLeft.animation.addByPrefix('enter', 'alife enter', 24, false);
 		portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0));
 		portraitLeft.updateHitbox();
