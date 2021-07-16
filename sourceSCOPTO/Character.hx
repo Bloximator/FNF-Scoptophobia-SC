@@ -499,23 +499,23 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 				
-		  case 'bloximator':
+			case 'bloximator':
 				// FUCKFUCFUCKFUCKFUCKFUCKDICKDICKDICKSHIETSHIETSHIET
-                tex = Paths.getSparrowAtlas('scopto/bloxiam', 'shared');
-                frames = tex;
-                animation.addByPrefix('idle', 'Idle', 24);
-                animation.addByPrefix('singUP', 'Up', 24);
-                animation.addByPrefix('singRIGHT', 'Right', 24);
-                animation.addByPrefix('singDOWN', 'Down', 24);
-                animation.addByPrefix('singLEFT', 'Left', 24);
+				tex = Paths.getSparrowAtlas('scopto/bloxiam', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'Idle', 24);
+				animation.addByPrefix('singUP', 'Up', 24);
+				animation.addByPrefix('singRIGHT', 'Right', 24);
+				animation.addByPrefix('singDOWN', 'Down', 24);
+				animation.addByPrefix('singLEFT', 'Left', 24);
 
-                addOffset('idle', -6, -291);
-                addOffset("singUP", -6, 272);
-                addOffset("singRIGHT", 50, -283);
-                addOffset("singLEFT", 380, -291);
-                addOffset("singDOWN", 192, -294);
+				addOffset('idle', -6, -291);
+				addOffset("singUP", -6, 272);
+				addOffset("singRIGHT", 50, -283);
+				addOffset("singLEFT", 380, -291);
+				addOffset("singDOWN", 192, -294);
 
-                playAnim('idle');
+				playAnim('idle');
 				
 			case 'shpee':
 				
