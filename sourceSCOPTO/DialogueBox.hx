@@ -454,7 +454,6 @@ class DialogueBox extends FlxSpriteGroup
 			case 'shpee':
 				portraitLeft.visible = false;
 				portraitRight.visible = false;
-				portraitClone.visible = false;
 				if (!portraitShpee.visible)
 				{
 					portraitShpee.visible = true;
