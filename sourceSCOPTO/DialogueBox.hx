@@ -31,6 +31,7 @@ class DialogueBox extends FlxSpriteGroup
 	var portraitLeft:FlxSprite;
 	var portraitRight:FlxSprite;
 	var portraitShpee:FlxSprite;
+	var portraitClone:FlxSprite;
 
 	var handSelect:FlxSprite;
 	var bgFade:FlxSprite;
@@ -171,7 +172,7 @@ class DialogueBox extends FlxSpriteGroup
     }
 	if (PlayState.SONG.song.toLowerCase() == 'gloomy-streets')
 	{
-		portraitLeft = new FlxSprite(0, 0);
+		portraitLeft = new FlxSprite(-20, 30);
 		portraitLeft.frames = Paths.getSparrowAtlas('scopto/alife portraits');
 		portraitLeft.animation.addByPrefix('enter', 'alife enter', 24, false);
 		portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0));
@@ -182,7 +183,7 @@ class DialogueBox extends FlxSpriteGroup
     }
 	if (PlayState.SONG.song.toLowerCase() == 'taking-matters')
 	{
-		portraitLeft = new FlxSprite(0, 0);
+		portraitLeft = new FlxSprite(-20, 30);
 		portraitLeft.frames = Paths.getSparrowAtlas('scopto/alife portraits');
 		portraitLeft.animation.addByPrefix('enter', 'alife enter', 24, false);
 		portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0));
@@ -193,7 +194,7 @@ class DialogueBox extends FlxSpriteGroup
     }
 	if (PlayState.SONG.song.toLowerCase() == 'the-clone')
 	{
-		portraitLeft = new FlxSprite(0, 0);
+		portraitLeft = new FlxSprite(-20, 30);
 		portraitLeft.frames = Paths.getSparrowAtlas('scopto/alife portraits');
 		portraitLeft.animation.addByPrefix('enter', 'alife enter', 24, false);
 		portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0));
@@ -259,7 +260,7 @@ class DialogueBox extends FlxSpriteGroup
 	}
 	if (PlayState.SONG.song.toLowerCase() == 'gloomy-streets')
 	{
-		portraitShpee = new FlxSprite(0, 0);
+		portraitShpee = new FlxSprite(50, 60);
 		portraitShpee.frames = Paths.getSparrowAtlas('scopto/shpee_portraits');
 		portraitShpee.animation.addByPrefix('enter', 'Shpee enter', 24, false);
 		portraitShpee.setGraphicSize(Std.int(portraitShpee.width * PlayState.daPixelZoom * 0));
@@ -270,7 +271,7 @@ class DialogueBox extends FlxSpriteGroup
     }
 	if (PlayState.SONG.song.toLowerCase() == 'taking-matters')
 	{
-		portraitShpee = new FlxSprite(0, 0);
+		portraitShpee = new FlxSprite(50, 60);
 		portraitShpee.frames = Paths.getSparrowAtlas('scopto/shpee_portraits');
 		portraitShpee.animation.addByPrefix('enter', 'Shpee enter', 24, false);
 		portraitShpee.setGraphicSize(Std.int(portraitShpee.width * PlayState.daPixelZoom * 0));
@@ -281,7 +282,7 @@ class DialogueBox extends FlxSpriteGroup
     }
 	if (PlayState.SONG.song.toLowerCase() == 'the-clone')
 	{
-		portraitShpee = new FlxSprite(0, 0);
+		portraitShpee = new FlxSprite(50, 60);
 		portraitShpee.frames = Paths.getSparrowAtlas('scopto/shpee_portraits');
 		portraitShpee.animation.addByPrefix('enter', 'Shpee enter', 24, false);
 		portraitShpee.setGraphicSize(Std.int(portraitShpee.width * PlayState.daPixelZoom * 0));
@@ -290,6 +291,28 @@ class DialogueBox extends FlxSpriteGroup
 		add(portraitShpee);
 		portraitShpee.visible = false;
     }
+	if (PlayState.SONG.song.toLowerCase() == 'senpai' || PlayState.SONG.song.toLowerCase() == 'roses' || PlayState.SONG.song.toLowerCase() == 'thorns')
+	{
+		portraitLeft = new FlxSprite(-20, 40);
+		portraitLeft.frames = Paths.getSparrowAtlas('weeb/senpaiPortrait');
+		portraitLeft.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
+		portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0.9));
+		portraitLeft.updateHitbox();
+		portraitLeft.scrollFactor.set();
+		add(portraitLeft);
+		portraitLeft.visible = false;
+	}
+	if (PlayState.SONG.song.toLowerCase() == 'the-clone')
+	{
+		portraitClone = new FlxSprite(50, 60);
+		portraitClone.frames = Paths.getSparrowAtlas('scopto/the clone enter');
+		portraitClone.animation.addByPrefix('enter', 'the clone enter', 24, false);
+		portraitClone.setGraphicSize(Std.int(portraitClone.width * PlayState.daPixelZoom * 0));
+		portraitClone.updateHitbox();
+		portraitClone.scrollFactor.set();
+		add(portraitClone);
+		portraitClone.visible = false;
+	}
 		box.animation.play('normalOpen');
 		box.setGraphicSize(Std.int(box.width * PlayState.daPixelZoom * 0.9));
 		box.updateHitbox();
@@ -431,10 +454,19 @@ class DialogueBox extends FlxSpriteGroup
 			case 'shpee':
 				portraitLeft.visible = false;
 				portraitRight.visible = false;
+				portraitClone.visible = false;
 				if (!portraitShpee.visible)
 				{
 					portraitShpee.visible = true;
 					portraitShpee.animation.play('enter');
+				}
+			case 'clone':
+				portraitLeft.visible = false;
+				portraitRight.visible = false;
+				if (!portraitClone.visible)
+				{
+					portraitClone.visible = true;
+					portraitClone.animation.play('enter');
 				}	
 		}
 	}
