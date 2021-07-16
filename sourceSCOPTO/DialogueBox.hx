@@ -262,7 +262,6 @@ class DialogueBox extends FlxSpriteGroup
 		portraitShpee = new FlxSprite(0, 0);
 		portraitShpee.frames = Paths.getSparrowAtlas('scopto/shpee_portraits');
 		portraitShpee.animation.addByPrefix('enter', 'Shpee enter', 24, false);
-		portraitShpee.setGraphicSize(Std.int(portraitShpee.width * PlayState.daPixelZoom * 0.9));
 		portraitShpee.updateHitbox();
 		portraitShpee.scrollFactor.set();
 		add(portraitShpee);
@@ -273,7 +272,6 @@ class DialogueBox extends FlxSpriteGroup
 		portraitShpee = new FlxSprite(0, 0);
 		portraitShpee.frames = Paths.getSparrowAtlas('scopto/shpee_portraits');
 		portraitShpee.animation.addByPrefix('enter', 'Shpee enter', 24, false);
-		portraitShpee.setGraphicSize(Std.int(portraitShpee.width * PlayState.daPixelZoom * 0.9));
 		portraitShpee.updateHitbox();
 		portraitShpee.scrollFactor.set();
 		add(portraitShpee);
@@ -284,7 +282,6 @@ class DialogueBox extends FlxSpriteGroup
 		portraitShpee = new FlxSprite(0, 0);
 		portraitShpee.frames = Paths.getSparrowAtlas('scopto/shpee_portraits');
 		portraitShpee.animation.addByPrefix('enter', 'Shpee enter', 24, false);
-		portraitShpee.setGraphicSize(Std.int(portraitShpee.width * PlayState.daPixelZoom * 0.9));
 		portraitShpee.updateHitbox();
 		portraitShpee.scrollFactor.set();
 		add(portraitShpee);
