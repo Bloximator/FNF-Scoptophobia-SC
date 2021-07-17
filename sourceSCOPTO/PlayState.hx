@@ -109,6 +109,8 @@ class PlayState extends MusicBeatState
 
 	public var notes:FlxTypedGroup<Note>;
 	private var unspawnNotes:Array<Note> = [];
+	var shootBeats:Array<Int> =    [1, 10, 20, 30, 40];
+	var shootBeatsPos:Array<Int> = [0,   3,   0,   2,   3,   0,   3,   0,   3,   3,   2,   1,   1,   0,   0,   0,   3,   3,   0,   0,   3];
 
 	public var strumLine:FlxSprite;
 	private var curSection:Int = 0;
@@ -1188,8 +1190,21 @@ class PlayState extends MusicBeatState
 				}
 			}
 			daBeats += 1;
+			if (songLowercase == 'the-clone')
+			{
+				for (x in 0...shootBeats.length)
+					{
+						var warnNoteTime = shootBeats[x];
+						var notethingidk:Float = warnNoteTime;
+						var warnNote:Note;
+						warnNote = new Note(notethingidk, 1, null, false, true);
+						warnNote.scrollFactor.set(0, 0);
+						unspawnNotes.push(warnNote);
+						warnNote.mustPress = true;
+						warnNote.x += FlxG.width / 2;
+					}
+			}
 		}
-
 		// trace(unspawnNotes.length);
 		// playerCounter += 1;
 
