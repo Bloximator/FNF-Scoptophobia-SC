@@ -16,7 +16,7 @@ class Character extends FlxSprite
 	public var curCharacter:String = 'bf';
 
 	public var holdTimer:Float = 0;
-
+	public var iconColor:String = "FF3bbcef";
 	public function new(x:Float, y:Float, ?character:String = "bf", ?isPlayer:Bool = false)
 	{
 		super(x, y);
@@ -501,6 +501,7 @@ class Character extends FlxSprite
 				
 			case 'bloximator':
 				// FUCKFUCFUCKFUCKFUCKFUCKDICKDICKDICKSHIETSHIETSHIET
+				iconColor = "FFaf2e2e";
 				tex = Paths.getSparrowAtlas('scopto/bloxiam', 'shared');
 				frames = tex;
 				animation.addByPrefix('idle', 'Idle', 24);
@@ -518,7 +519,7 @@ class Character extends FlxSprite
 				playAnim('idle');
 				
 			case 'shpee':
-				
+				iconColor = "FFa5a5a5";	
 				tex = Paths.getSparrowAtlas('scopto/Shpee');
 				frames = tex;
 				animation.addByPrefix('idle', 'Shpee', 24);
@@ -539,7 +540,7 @@ class Character extends FlxSprite
 				updateHitbox();
 				
 			case 'alife':
-			
+				iconColor = "FFec2d58";
 				tex = Paths.getSparrowAtlas('scopto/ALIFE');
 				frames = tex;
 				animation.addByPrefix('idle', 'Idle', 24);
@@ -560,7 +561,7 @@ class Character extends FlxSprite
 				updateHitbox();
 				
 			 case 'clone':
-                
+				iconColor = "FFa5a5a5";	
                 tex = Paths.getSparrowAtlas('scopto/clone');
                 frames = tex;
                 animation.addByPrefix('idle', 'clone idle', 24);
