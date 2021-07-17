@@ -35,7 +35,7 @@ class StoryMenuState extends MusicBeatState
 	];
 
 	var weekNames:Array<String> = [
-		"Scoptophobia"
+		"Shpee and Alife"
 	];
 
 	var txtWeekTitle:FlxText;

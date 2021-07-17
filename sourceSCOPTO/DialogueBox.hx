@@ -1,5 +1,6 @@
 package;
 
+import flixel.system.FlxSound;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.addons.text.FlxTypeText;
@@ -32,6 +33,16 @@ class DialogueBox extends FlxSpriteGroup
 	var portraitRight:FlxSprite;
 	var portraitShpee:FlxSprite;
 	var portraitClone:FlxSprite;
+	var portraitShpeeTired:FlxSprite;
+	var portraitAlifeTone:FlxSprite;
+	var portraitAlifeAkward:FlxSprite;
+	var portraitShpeeAkward:FlxSprite;
+	var portraitShpeeHappy:FlxSprite;
+	var portraitShpeeNervous:FlxSprite;
+	var portraitAlife:FlxSprite;
+	//ALIFE DUPE CUS IM STUPID AND CANT FIX THIS
+
+	var wtf:FlxSound;
 
 	var handSelect:FlxSprite;
 	var bgFade:FlxSprite;
@@ -172,7 +183,7 @@ class DialogueBox extends FlxSpriteGroup
     }
 	if (PlayState.SONG.song.toLowerCase() == 'gloomy-streets')
 	{
-		portraitLeft = new FlxSprite(-20, 30);
+		portraitLeft = new FlxSprite(750, 110);
 		portraitLeft.frames = Paths.getSparrowAtlas('scopto/alife portraits');
 		portraitLeft.animation.addByPrefix('enter', 'alife enter', 24, false);
 		portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0));
@@ -183,7 +194,7 @@ class DialogueBox extends FlxSpriteGroup
     }
 	if (PlayState.SONG.song.toLowerCase() == 'taking-matters')
 	{
-		portraitLeft = new FlxSprite(-20, 30);
+		portraitLeft = new FlxSprite(750, 110);
 		portraitLeft.frames = Paths.getSparrowAtlas('scopto/alife portraits');
 		portraitLeft.animation.addByPrefix('enter', 'alife enter', 24, false);
 		portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0));
@@ -194,7 +205,7 @@ class DialogueBox extends FlxSpriteGroup
     }
 	if (PlayState.SONG.song.toLowerCase() == 'the-clone')
 	{
-		portraitLeft = new FlxSprite(-20, 30);
+		portraitLeft = new FlxSprite(750, 110);
 		portraitLeft.frames = Paths.getSparrowAtlas('scopto/alife portraits');
 		portraitLeft.animation.addByPrefix('enter', 'alife enter', 24, false);
 		portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0));
@@ -219,39 +230,6 @@ class DialogueBox extends FlxSpriteGroup
 		portraitRight = new FlxSprite(0, 30);
 		portraitRight.frames = Paths.getSparrowAtlas('weeb/bfPortrait');
 		portraitRight.animation.addByPrefix('enter', 'Boyfriend portrait enter', 24, false);
-		portraitRight.setGraphicSize(Std.int(portraitRight.width * PlayState.daPixelZoom * 0.9));
-		portraitRight.updateHitbox();
-		portraitRight.scrollFactor.set();
-		add(portraitRight);
-		portraitRight.visible = false;
-	}
-	if (PlayState.SONG.song.toLowerCase() == 'gloomy-streets')
-	{
-		portraitRight = new FlxSprite(0, 30);
-		portraitRight.frames = Paths.getSparrowAtlas('weeb/bfPortrait');
-		portraitRight.animation.addByPrefix('enter', 'Boyfriend portrait enter', 24, false);
-		portraitRight.setGraphicSize(Std.int(portraitRight.width * PlayState.daPixelZoom * 0.9));
-		portraitRight.updateHitbox();
-		portraitRight.scrollFactor.set();
-		add(portraitRight);
-		portraitRight.visible = false;
-	}
-	if (PlayState.SONG.song.toLowerCase() == 'taking-matters')
-	{
-		portraitRight = new FlxSprite(0, 30);
-		portraitRight.frames = Paths.getSparrowAtlas('weeb/bfPortrait');
-		portraitRight.animation.addByPrefix('enter', 'Boyfriend portrait enter', 24, false);
-		portraitRight.setGraphicSize(Std.int(portraitRight.width * PlayState.daPixelZoom * 0.9));
-		portraitRight.updateHitbox();
-		portraitRight.scrollFactor.set();
-		add(portraitRight);
-		portraitRight.visible = false;
-	}
-	if (PlayState.SONG.song.toLowerCase() == 'the-clone')
-	{
-		portraitRight = new FlxSprite(0, 30);
-		portraitRight.frames = Paths.getSparrowAtlas('weeb/bfPortrait');
-		portraitRight.animation.addByPrefix('enter', 'Boyfriend portrait enter', 24, false);
 		portraitRight.setGraphicSize(Std.int(portraitRight.width * PlayState.daPixelZoom * 0));
 		portraitRight.updateHitbox();
 		portraitRight.scrollFactor.set();
@@ -260,7 +238,46 @@ class DialogueBox extends FlxSpriteGroup
 	}
 	if (PlayState.SONG.song.toLowerCase() == 'gloomy-streets')
 	{
-		portraitShpee = new FlxSprite(50, 60);
+		portraitRight = new FlxSprite(750, 180);
+		portraitRight.frames = Paths.getSparrowAtlas('scopto/boyfriend portraits');
+		portraitRight.animation.addByPrefix('enter', 'bf portrait enter', 24, false);
+		portraitRight.animation.addByPrefix('enterhorrified', 'bf horrified enter', 24, false);
+		portraitRight.animation.addByPrefix('enterkickasslol', 'bf kickass enter', 24, false);
+		portraitRight.setGraphicSize(Std.int(portraitRight.width * PlayState.daPixelZoom * 0));
+		portraitRight.updateHitbox();
+		portraitRight.scrollFactor.set();
+		add(portraitRight);
+		portraitRight.visible = false;
+	}
+	if (PlayState.SONG.song.toLowerCase() == 'taking-matters')
+	{
+		portraitRight = new FlxSprite(750, 180);
+		portraitRight.frames = Paths.getSparrowAtlas('scopto/boyfriend portraits');
+		portraitRight.animation.addByPrefix('enter', 'bf portrait enter', 24, false);
+		portraitRight.animation.addByPrefix('enterhorrified', 'bf horrified enter', 24, false);
+		portraitRight.animation.addByPrefix('enterkickasslol', 'bf kickass enter', 24, false);
+		portraitRight.setGraphicSize(Std.int(portraitRight.width * PlayState.daPixelZoom * 0));
+		portraitRight.updateHitbox();
+		portraitRight.scrollFactor.set();
+		add(portraitRight);
+		portraitRight.visible = false;
+	}
+	if (PlayState.SONG.song.toLowerCase() == 'the-clone')
+	{
+		portraitRight = new FlxSprite(750, 180);
+		portraitRight.frames = Paths.getSparrowAtlas('scopto/boyfriend portraits');
+		portraitRight.animation.addByPrefix('enter', 'bf portrait enter', 24, false);
+		portraitRight.animation.addByPrefix('enterhorrified', 'bf horrified enter', 24, false);
+		portraitRight.animation.addByPrefix('enterkickasslol', 'bf kickass enter', 24, false);
+		portraitRight.setGraphicSize(Std.int(portraitRight.width * PlayState.daPixelZoom * 0));
+		portraitRight.updateHitbox();
+		portraitRight.scrollFactor.set();
+		add(portraitRight);
+		portraitRight.visible = false;
+	}
+	if (PlayState.SONG.song.toLowerCase() == 'gloomy-streets')
+	{
+		portraitShpee = new FlxSprite(150, 86);
 		portraitShpee.frames = Paths.getSparrowAtlas('scopto/shpee_portraits');
 		portraitShpee.animation.addByPrefix('enter', 'Shpee enter', 24, false);
 		portraitShpee.setGraphicSize(Std.int(portraitShpee.width * PlayState.daPixelZoom * 0));
@@ -271,7 +288,7 @@ class DialogueBox extends FlxSpriteGroup
     }
 	if (PlayState.SONG.song.toLowerCase() == 'taking-matters')
 	{
-		portraitShpee = new FlxSprite(50, 60);
+		portraitShpee = new FlxSprite(150, 86);
 		portraitShpee.frames = Paths.getSparrowAtlas('scopto/shpee_portraits');
 		portraitShpee.animation.addByPrefix('enter', 'Shpee enter', 24, false);
 		portraitShpee.setGraphicSize(Std.int(portraitShpee.width * PlayState.daPixelZoom * 0));
@@ -282,7 +299,7 @@ class DialogueBox extends FlxSpriteGroup
     }
 	if (PlayState.SONG.song.toLowerCase() == 'the-clone')
 	{
-		portraitShpee = new FlxSprite(50, 60);
+		portraitShpee = new FlxSprite(150, 86);
 		portraitShpee.frames = Paths.getSparrowAtlas('scopto/shpee_portraits');
 		portraitShpee.animation.addByPrefix('enter', 'Shpee enter', 24, false);
 		portraitShpee.setGraphicSize(Std.int(portraitShpee.width * PlayState.daPixelZoom * 0));
@@ -304,7 +321,7 @@ class DialogueBox extends FlxSpriteGroup
 	}
 	if (PlayState.SONG.song.toLowerCase() == 'the-clone')
 	{
-		portraitClone = new FlxSprite(50, 60);
+		portraitClone = new FlxSprite(190, 86);
 		portraitClone.frames = Paths.getSparrowAtlas('scopto/the clone enter');
 		portraitClone.animation.addByPrefix('enter', 'the clone enter', 24, false);
 		portraitClone.setGraphicSize(Std.int(portraitClone.width * PlayState.daPixelZoom * 0));
@@ -313,7 +330,208 @@ class DialogueBox extends FlxSpriteGroup
 		add(portraitClone);
 		portraitClone.visible = false;
 	}
-		box.animation.play('normalOpen');
+	if (PlayState.SONG.song.toLowerCase() == 'senpai' || PlayState.SONG.song.toLowerCase() == 'roses' || PlayState.SONG.song.toLowerCase() == 'thorns')
+	{
+		portraitLeft = new FlxSprite(-20, 40);
+		portraitLeft.frames = Paths.getSparrowAtlas('weeb/senpaiPortrait');
+		portraitLeft.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
+		portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0.9));
+		portraitLeft.updateHitbox();
+		portraitLeft.scrollFactor.set();
+		add(portraitLeft);
+		portraitLeft.visible = false;
+	}
+	if (PlayState.SONG.song.toLowerCase() == 'taking-matters')
+	{
+		portraitShpeeTired = new FlxSprite(150, 86);
+		portraitShpeeTired.frames = Paths.getSparrowAtlas('scopto/shpee_portraits');
+		portraitShpeeTired.animation.addByPrefix('enter', 'Shpee tired enter', 24, false);
+		portraitShpeeTired.setGraphicSize(Std.int(portraitShpeeTired.width * PlayState.daPixelZoom * 0));
+		portraitShpeeTired.updateHitbox();
+		portraitShpeeTired.scrollFactor.set();
+		add(portraitShpeeTired);
+		portraitShpeeTired.visible = false;
+	}
+	if (PlayState.SONG.song.toLowerCase() == 'the-clone')
+	{
+		portraitShpeeTired = new FlxSprite(150, 86);
+		portraitShpeeTired.frames = Paths.getSparrowAtlas('scopto/shpee_portraits');
+		portraitShpeeTired.animation.addByPrefix('enter', 'Shpee tired enter', 24, false);
+		portraitShpeeTired.setGraphicSize(Std.int(portraitShpeeTired.width * PlayState.daPixelZoom * 0));
+		portraitShpeeTired.updateHitbox();
+		portraitShpeeTired.scrollFactor.set();
+		add(portraitShpeeTired);
+		portraitShpeeTired.visible = false;
+	}
+	
+	if (PlayState.SONG.song.toLowerCase() == 'senpai' || PlayState.SONG.song.toLowerCase() == 'roses' || PlayState.SONG.song.toLowerCase() == 'thorns')
+	{
+		portraitLeft = new FlxSprite(-20, 40);
+		portraitLeft.frames = Paths.getSparrowAtlas('weeb/senpaiPortrait');
+		portraitLeft.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
+		portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0.9));
+		portraitLeft.updateHitbox();
+		portraitLeft.scrollFactor.set();
+		add(portraitLeft);
+		portraitLeft.visible = false;
+	}
+	if (PlayState.SONG.song.toLowerCase() == 'taking-matters')
+	{
+		//bitch!
+		portraitAlifeTone = new FlxSprite(150, 155);
+		portraitAlifeTone.frames = Paths.getSparrowAtlas('scopto/alife portraits');
+		portraitAlifeTone.animation.addByPrefix('enter', 'alife tone enter', 24, false);
+		portraitAlifeTone.setGraphicSize(Std.int(portraitAlifeTone.width * PlayState.daPixelZoom * 0));
+		portraitAlifeTone.updateHitbox();
+		portraitAlifeTone.scrollFactor.set();
+		add(portraitAlifeTone);
+		portraitAlifeTone.visible = false;
+	}
+	if (PlayState.SONG.song.toLowerCase() == 'senpai' || PlayState.SONG.song.toLowerCase() == 'roses' || PlayState.SONG.song.toLowerCase() == 'thorns')
+	{
+		portraitLeft = new FlxSprite(-20, 40);
+		portraitLeft.frames = Paths.getSparrowAtlas('weeb/senpaiPortrait');
+		portraitLeft.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
+		portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0.9));
+		portraitLeft.updateHitbox();
+		portraitLeft.scrollFactor.set();
+		add(portraitLeft);
+		portraitLeft.visible = false;
+	}
+	if (PlayState.SONG.song.toLowerCase() == 'taking-matters')
+	{
+		portraitAlifeAkward = new FlxSprite(150, 155);
+		portraitAlifeAkward.frames = Paths.getSparrowAtlas('scopto/alife portraits');
+		portraitAlifeAkward.animation.addByPrefix('enter', 'alife akward enter', 24, false);
+		portraitAlifeAkward.setGraphicSize(Std.int(portraitAlifeAkward.width * PlayState.daPixelZoom * 0));
+		portraitAlifeAkward.updateHitbox();
+		portraitAlifeAkward.scrollFactor.set();
+		add(portraitAlifeAkward);
+		portraitAlifeAkward.visible = false;
+	}
+	if (PlayState.SONG.song.toLowerCase() == 'senpai' || PlayState.SONG.song.toLowerCase() == 'roses' || PlayState.SONG.song.toLowerCase() == 'thorns')
+	{
+		portraitLeft = new FlxSprite(-20, 40);
+		portraitLeft.frames = Paths.getSparrowAtlas('weeb/senpaiPortrait');
+		portraitLeft.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
+		portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0.9));
+		portraitLeft.updateHitbox();
+		portraitLeft.scrollFactor.set();
+		add(portraitLeft);
+		portraitLeft.visible = false;
+	}
+	if (PlayState.SONG.song.toLowerCase() == 'taking-matters')
+	{
+		//boy what the hell boy
+		portraitShpeeAkward = new FlxSprite(150, 86);
+		portraitShpeeAkward.frames = Paths.getSparrowAtlas('scopto/shpee_portraits');
+		portraitShpeeAkward.animation.addByPrefix('enter', 'Shpee akward enter', 24, false);
+		portraitShpeeAkward.setGraphicSize(Std.int(portraitShpeeAkward.width * PlayState.daPixelZoom * 0));
+		portraitShpeeAkward.updateHitbox();
+		portraitShpeeAkward.scrollFactor.set();
+		add(portraitShpeeAkward);
+		portraitShpeeAkward.visible = false;
+	}
+	if (PlayState.SONG.song.toLowerCase() == 'senpai' || PlayState.SONG.song.toLowerCase() == 'roses' || PlayState.SONG.song.toLowerCase() == 'thorns')
+	{
+		portraitLeft = new FlxSprite(-20, 40);
+		portraitLeft.frames = Paths.getSparrowAtlas('weeb/senpaiPortrait');
+		portraitLeft.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
+		portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0.9));
+		portraitLeft.updateHitbox();
+		portraitLeft.scrollFactor.set();
+		add(portraitLeft);
+		portraitLeft.visible = false;
+	}
+	if (PlayState.SONG.song.toLowerCase() == 'gloomy-streets')
+	{
+		portraitShpeeHappy = new FlxSprite(150, 86);
+		portraitShpeeHappy.frames = Paths.getSparrowAtlas('scopto/shpee_portraits');
+		portraitShpeeHappy.animation.addByPrefix('enter', 'Shpee excited enter', 24, false);
+		portraitShpeeHappy.setGraphicSize(Std.int(portraitShpeeHappy.width * PlayState.daPixelZoom * 0));
+		portraitShpeeHappy.updateHitbox();
+		portraitShpeeHappy.scrollFactor.set();
+		add(portraitShpeeHappy);
+		portraitShpeeHappy.visible = false;
+	}
+	if (PlayState.SONG.song.toLowerCase() == 'the-clone')
+	{
+		portraitShpeeHappy = new FlxSprite(150, 86);
+		portraitShpeeHappy.frames = Paths.getSparrowAtlas('scopto/shpee_portraits');
+		portraitShpeeHappy.animation.addByPrefix('enter', 'Shpee excited enter', 24, false);
+		portraitShpeeHappy.setGraphicSize(Std.int(portraitShpeeHappy.width * PlayState.daPixelZoom * 0));
+		portraitShpeeHappy.updateHitbox();
+		portraitShpeeHappy.scrollFactor.set();
+		add(portraitShpeeHappy);
+		portraitShpeeHappy.visible = false;
+	}
+	if (PlayState.SONG.song.toLowerCase() == 'taking-matters')
+	{
+		portraitShpeeTired = new FlxSprite(150, 86);
+		portraitShpeeTired.frames = Paths.getSparrowAtlas('scopto/shpee_portraits');
+		portraitShpeeTired.animation.addByPrefix('enter', 'Shpee tired enter', 24, false);
+		portraitShpeeTired.setGraphicSize(Std.int(portraitShpeeTired.width * PlayState.daPixelZoom * 0));
+		portraitShpeeTired.updateHitbox();
+		portraitShpeeTired.scrollFactor.set();
+		add(portraitShpeeTired);
+		portraitShpeeTired.visible = false;
+	}
+	if (PlayState.SONG.song.toLowerCase() == 'the-clone')
+	{
+		portraitShpeeTired = new FlxSprite(150, 86);
+		portraitShpeeTired.frames = Paths.getSparrowAtlas('scopto/shpee_portraits');
+		portraitShpeeTired.animation.addByPrefix('enter', 'Shpee tired enter', 24, false);
+		portraitShpeeTired.setGraphicSize(Std.int(portraitShpeeTired.width * PlayState.daPixelZoom * 0));
+		portraitShpeeTired.updateHitbox();
+		portraitShpeeTired.scrollFactor.set();
+		add(portraitShpeeTired);
+		portraitShpeeTired.visible = false;
+	}	
+	if (PlayState.SONG.song.toLowerCase() == 'taking-matters')
+	{
+		portraitShpeeNervous = new FlxSprite(150, 86);
+		portraitShpeeNervous.frames = Paths.getSparrowAtlas('scopto/shpee_portraits');
+		portraitShpeeNervous.animation.addByPrefix('enter', 'Shpee tired enter', 24, false);
+		portraitShpeeNervous.setGraphicSize(Std.int(portraitShpeeNervous.width * PlayState.daPixelZoom * 0));
+		portraitShpeeNervous.updateHitbox();
+		portraitShpeeNervous.scrollFactor.set();
+		add(portraitShpeeNervous);
+		portraitShpeeNervous.visible = false;
+	}
+	if (PlayState.SONG.song.toLowerCase() == 'the-clone')
+	{
+		portraitShpeeNervous = new FlxSprite(150, 86);
+		portraitShpeeNervous.frames = Paths.getSparrowAtlas('scopto/shpee_portraits');
+		portraitShpeeNervous.animation.addByPrefix('enter', 'Shpee tired enter', 24, false);
+		portraitShpeeNervous.setGraphicSize(Std.int(portraitShpeeNervous.width * PlayState.daPixelZoom * 0));
+		portraitShpeeNervous.updateHitbox();
+		portraitShpeeNervous.scrollFactor.set();
+		add(portraitShpeeNervous);
+		portraitShpeeNervous.visible = false;
+	}
+	if (PlayState.SONG.song.toLowerCase() == 'senpai' || PlayState.SONG.song.toLowerCase() == 'roses' || PlayState.SONG.song.toLowerCase() == 'thorns')
+	{
+		portraitLeft = new FlxSprite(-20, 40);
+		portraitLeft.frames = Paths.getSparrowAtlas('weeb/senpaiPortrait');
+		portraitLeft.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
+		portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0.9));
+		portraitLeft.updateHitbox();
+		portraitLeft.scrollFactor.set();
+		add(portraitLeft);
+		portraitLeft.visible = false;
+	}
+	if (PlayState.SONG.song.toLowerCase() == 'taking-matters')
+	{
+		portraitAlife = new FlxSprite(150, 155);
+		portraitAlife.frames = Paths.getSparrowAtlas('scopto/alife portraits');
+		portraitAlife.animation.addByPrefix('enter', 'alife enter', 24, false);
+		portraitAlife.setGraphicSize(Std.int(portraitAlife.width * PlayState.daPixelZoom * 0));
+		portraitAlife.updateHitbox();
+		portraitAlife.scrollFactor.set();
+		add(portraitAlife);
+		portraitAlife.visible = false;
+	}	
+	box.animation.play('normalOpen');
 		box.setGraphicSize(Std.int(box.width * PlayState.daPixelZoom * 0.9));
 		box.updateHitbox();
 		add(box);
@@ -438,6 +656,8 @@ class DialogueBox extends FlxSpriteGroup
 			case 'dad':
 				portraitRight.visible = false;
 				portraitShpee.visible = false;
+				portraitShpeeAkward.visible = false;
+				portraitShpeeTired.visible = false;
 				if (!portraitLeft.visible)
 				{
 					portraitLeft.visible = true;
@@ -451,9 +671,26 @@ class DialogueBox extends FlxSpriteGroup
 					portraitRight.visible = true;
 					portraitRight.animation.play('enter');
 				}
+			case 'bfhorrified':
+				portraitLeft.visible = false;
+				portraitShpee.visible = false;
+				if (!portraitRight.visible)
+				{
+					portraitRight.visible = true;
+					portraitRight.animation.play('enterhorrified');
+				}
+			case 'bfkickass':
+				portraitLeft.visible = false;
+				portraitShpeeHappy.visible = false;
+				if (!portraitRight.visible)
+				{
+					portraitRight.visible = true;
+					portraitRight.animation.play('enterkickasslol');
+				}
 			case 'shpee':
 				portraitLeft.visible = false;
 				portraitRight.visible = false;
+				//portraitShpeeHappy.visible = false;
 				if (!portraitShpee.visible)
 				{
 					portraitShpee.visible = true;
@@ -462,10 +699,116 @@ class DialogueBox extends FlxSpriteGroup
 			case 'clone':
 				portraitLeft.visible = false;
 				portraitRight.visible = false;
+				portraitShpee.visible = false;
 				if (!portraitClone.visible)
 				{
 					portraitClone.visible = true;
 					portraitClone.animation.play('enter');
+				}
+			case 'shpeetired':
+				portraitLeft.visible = false;
+				portraitRight.visible = false;
+				portraitShpee.visible = false;
+				portraitAlifeTone.visible = false;
+				portraitAlife.visible = false;
+				if (!portraitShpeeTired.visible)
+				{
+					portraitShpeeTired.visible = true;
+					portraitShpeeTired.animation.play('enter');
+				}
+			case 'alifetone':
+				portraitLeft.visible = false;
+				portraitRight.visible = false;
+				portraitShpeeTired.visible = false;
+				portraitShpeeAkward.visible = false;
+				portraitAlife.visible = false;
+				if (!portraitAlifeTone.visible)
+				{
+					portraitAlifeTone.visible = true;
+					portraitAlifeTone.animation.play('enter');
+				}
+			case 'alifeakward':
+				//copypaste fu
+				if (FlxG.sound.music != null && FlxG.sound.music.playing) {
+					FlxG.sound.music.stop();
+				}
+				portraitLeft.visible = false;
+				portraitShpeeAkward.visible = false;
+				portraitShpeeTired.visible = false;
+				portraitAlife.visible = false;
+				portraitAlifeTone.visible = false;
+				if (!portraitAlifeAkward.visible)
+				{
+					portraitAlifeAkward.visible = true;
+					portraitAlifeAkward.animation.play('enter');
+				}
+			case 'shpeeakward':
+				if (wtf != null && wtf.playing) {
+					wtf.stop();
+				}
+
+				wtf = new FlxSound().loadEmbedded(Paths.sound('missnote1'));
+				wtf.play();
+				portraitLeft.visible = false;
+				portraitRight.visible = false;
+				portraitAlifeTone.visible = false;
+				portraitAlife.visible = false;
+				if (!portraitShpeeAkward.visible)
+				{
+					portraitShpeeAkward.visible = true;
+					portraitShpeeAkward.animation.play('enter');
+				}
+			case 'shpeehappy':
+				portraitLeft.visible = false;
+				portraitRight.visible = false;
+				portraitShpee.visible = false;
+				if (!portraitShpeeHappy.visible)
+				{
+					portraitShpeeHappy.visible = true;
+					portraitShpeeHappy.animation.play('enter');
+				}
+			case 'shpeenervous':
+				portraitLeft.visible = false;
+				portraitRight.visible = false;
+				portraitClone.visible = false;
+				if (!portraitShpeeNervous.visible)
+				{
+					portraitShpeeNervous.visible = true;
+					portraitShpeeNervous.animation.play('enter');
+				}
+			case 'shpeehappytwo':
+				portraitLeft.visible = false;
+				portraitRight.visible = false;
+				portraitShpeeNervous.visible = false;
+				if (!portraitShpeeHappy.visible)
+				{
+					portraitShpeeHappy.visible = true;
+					portraitShpeeHappy.animation.play('enter');
+				}
+			case 'bfkickass2':
+				//Copypaste again
+				if (FlxG.sound.music != null && FlxG.sound.music.playing) {
+					FlxG.sound.music.stop();
+				}
+				portraitLeft.visible = false;
+				portraitShpeeHappy.visible = false;
+				if (!portraitRight.visible)
+				{
+					portraitRight.visible = true;
+					portraitRight.animation.play('enterkickasslol');
+				}
+			case 'alife':
+				portraitLeft.visible = false;
+				portraitRight.visible = false;
+				portraitShpee.visible = false;
+				portraitShpeeAkward.visible = false;
+				portraitShpeeTired.visible = false;
+				portraitAlifeAkward.visible = false;
+				portraitAlifeTone.visible = false;
+				if (!portraitAlife.visible)
+				{
+					portraitAlife.visible = true;
+					portraitAlife.animation.play('enter');
 				}	
 		}
 	}
