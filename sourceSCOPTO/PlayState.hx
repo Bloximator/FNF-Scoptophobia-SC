@@ -355,10 +355,10 @@ class PlayState extends MusicBeatState
 		switch(SONG.stage)
 		{
 			
-			case 'street':
+			case 'streetold':
 				{
 						defaultCamZoom = 0.9;
-					    curStage = 'street';
+					    curStage = 'streetold';
 						var bg:FlxSprite = new FlxSprite(-290, -138).loadGraphic(Paths.image('scopto/street'));
 						bg.antialiasing = true;
 						bg.scrollFactor.set(0.9, 0.9);
@@ -367,6 +367,18 @@ class PlayState extends MusicBeatState
 						FlxG.camera.zoom += 100;
 						
 			    }
+			case 'street':
+				{
+						defaultCamZoom = 0.9;
+						curStage = 'street';
+						var bg:FlxSprite = new FlxSprite(-290, -138).loadGraphic(Paths.image('scopto/streetbgfresher'));
+						bg.antialiasing = true;
+						bg.scrollFactor.set(0.9, 0.9);
+						bg.active = false;
+						add(bg);
+						FlxG.camera.zoom += 100;
+						
+				}			
 			default:
 			{
 					defaultCamZoom = 0.9;
