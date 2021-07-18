@@ -377,6 +377,18 @@ class PlayState extends MusicBeatState
 						add(bg);
 						FlxG.camera.zoom += 100;			
 				}	
+			case 'bloxiamhouse':
+				{
+						defaultCamZoom = 0.9;
+						curStage = 'bloxiamhouse';
+						var bg:FlxSprite = new FlxSprite(-290, -138).loadGraphic(Paths.image('scopto/bloxiamhouse'));
+						bg.antialiasing = true;
+						bg.scrollFactor.set(0.9, 0.9);
+						bg.active = false;
+						add(bg);
+						FlxG.camera.zoom += 100;			
+				}	
+					
 			case 'streetclones':
 				{
 						defaultCamZoom = 0.9;
