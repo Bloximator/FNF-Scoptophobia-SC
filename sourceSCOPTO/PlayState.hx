@@ -638,19 +638,19 @@ class PlayState extends MusicBeatState
 		{
 			case 'streetclones':
 				{
-						ClonesBackLeft = new FlxSprite (-323,438);
+						ClonesBackLeft = new FlxSprite (-423,438);
 						ClonesBackLeft.frames = Paths.getSparrowAtlas('scopto/clonebackleft');
-						ClonesBackLeft.animation.addByPrefix('idle', 'clonesbackleft', 24, false);
+						ClonesBackLeft.animation.addByPrefix('idle', 'clonesbackleft', 24, true);
 						ClonesBackLeft.scrollFactor.set(1.5, 0.8);
 						ClonesBackLeft.antialiasing = true;
 						if(FlxG.save.data.distractions){
 							add(ClonesBackLeft);
 						}
 
-						ClonesBackRight = new FlxSprite (605,438);
+						ClonesBackRight = new FlxSprite (1175,538);
 						ClonesBackRight.scrollFactor.set(1.5, 0.8);
 						ClonesBackRight.frames = Paths.getSparrowAtlas('scopto/clonebackright');
-						ClonesBackRight.animation.addByPrefix('idle', 'clonesback right', 24, false);
+						ClonesBackRight.animation.addByPrefix('idle', 'clonesback right', 24, true);
 						ClonesBackRight.antialiasing = true;
 						if(FlxG.save.data.distractions){
 							add(ClonesBackRight);
