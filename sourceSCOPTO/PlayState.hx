@@ -638,7 +638,7 @@ class PlayState extends MusicBeatState
 		{
 			case 'streetclones':
 				{
-						ClonesBackLeft = new FlxSprite (-423,438);
+						ClonesBackLeft = new FlxSprite (-523,438);
 						ClonesBackLeft.frames = Paths.getSparrowAtlas('scopto/clonebackleft');
 						ClonesBackLeft.animation.addByPrefix('idle', 'clonesbackleft', 24, true);
 						ClonesBackLeft.scrollFactor.set(1.5, 0.8);
