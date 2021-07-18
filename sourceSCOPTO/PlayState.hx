@@ -364,8 +364,7 @@ class PlayState extends MusicBeatState
 						bg.scrollFactor.set(0.9, 0.9);
 						bg.active = false;
 						add(bg);
-						FlxG.camera.zoom += 100;
-						
+						FlxG.camera.zoom += 100;						
 			    }
 			case 'street':
 				{
@@ -376,7 +375,32 @@ class PlayState extends MusicBeatState
 						bg.scrollFactor.set(0.9, 0.9);
 						bg.active = false;
 						add(bg);
+						FlxG.camera.zoom += 100;			
+				}	
+			case 'streetclones':
+				{
+						defaultCamZoom = 0.9;
+						curStage = 'street';
+						var bg:FlxSprite = new FlxSprite(-290, -138).loadGraphic(Paths.image('scopto/streetbgfresher'));
+						bg.antialiasing = true;
+						bg.scrollFactor.set(0.9, 0.9);
+						bg.active = false;
+						add(bg);
 						FlxG.camera.zoom += 100;
+
+						var ClonesBackLeft = new FlxSprite (0,0);
+						ClonesBackLeft.frames = Paths.getSparrowAtlas('scopto/clonesLeft');
+						ClonesBackLeft.animation.addByPrefix('idleleft', 'clonesbackleft', 24, false);
+						ClonesBackLeft.animation.play('idleleft');
+						ClonesBackLeft.antialiasing = true;
+						add(ClonesBackLeft);
+
+						var ClonesBackRight = new FlxSprite (0,0);
+						ClonesBackRight.frames = Paths.getSparrowAtlas('scopto/cloneRight');
+						ClonesBackRight.animation.addByPrefix('idleright', 'clonesback right', 24, false);
+						ClonesBackRight.animation.play('idleright');
+						ClonesBackRight.antialiasing = true;
+						add(ClonesBackRight);
 						
 				}			
 			default:

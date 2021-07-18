@@ -7,4 +7,4 @@ mallEvil
 school
 schoolEvil
 street
-streetclone
+streetclones
