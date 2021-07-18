@@ -109,6 +109,8 @@ class PlayState extends MusicBeatState
 
 	public var notes:FlxTypedGroup<Note>;
 	private var unspawnNotes:Array<Note> = [];
+	var shootBeats:Array<Int> =    [1, 10, 20, 30, 40];
+	var shootBeatsPos:Array<Int> = [0,   3,   0,   2,   3,   0,   3,   0,   3,   3,   2,   1,   1,   0,   0,   0,   3,   3,   0,   0,   3];
 
 	public var strumLine:FlxSprite;
 	private var curSection:Int = 0;
@@ -169,6 +171,8 @@ class PlayState extends MusicBeatState
 	var upperBoppers:FlxSprite;
 	var bottomBoppers:FlxSprite;
 	var santa:FlxSprite;
+	var ClonesBackLeft:FlxSprite;
+	var ClonesBackRight:FlxSprite;
 
 	var fc:Bool = true;
 
@@ -399,20 +403,6 @@ class PlayState extends MusicBeatState
 						bg.active = false;
 						add(bg);
 						FlxG.camera.zoom += 100;
-
-						var ClonesBackLeft = new FlxSprite (0,0);
-						ClonesBackLeft.frames = Paths.getSparrowAtlas('scopto/clonesLeft');
-						ClonesBackLeft.animation.addByPrefix('idleleft', 'clonesbackleft', 24, false);
-						ClonesBackLeft.animation.play('idleleft');
-						ClonesBackLeft.antialiasing = true;
-						add(ClonesBackLeft);
-
-						var ClonesBackRight = new FlxSprite (0,0);
-						ClonesBackRight.frames = Paths.getSparrowAtlas('scopto/cloneRight');
-						ClonesBackRight.animation.addByPrefix('idleright', 'clonesback right', 24, false);
-						ClonesBackRight.animation.play('idleright');
-						ClonesBackRight.antialiasing = true;
-						add(ClonesBackRight);
 						
 				}			
 			default:
@@ -644,7 +634,30 @@ class PlayState extends MusicBeatState
 		FlxG.worldBounds.set(0, 0, FlxG.width, FlxG.height);
 
 		FlxG.fixedTimestep = false;
+		switch(SONG.stage)
+		{
+			case 'streetclones':
+				{
+						ClonesBackLeft = new FlxSprite (-323,438);
+						ClonesBackLeft.frames = Paths.getSparrowAtlas('scopto/clonebackleft');
+						ClonesBackLeft.animation.addByPrefix('idle', 'clonesbackleft', 24, false);
+						ClonesBackLeft.scrollFactor.set(1.5, 0.8);
+						ClonesBackLeft.antialiasing = true;
+						if(FlxG.save.data.distractions){
+							add(ClonesBackLeft);
+						}
 
+						ClonesBackRight = new FlxSprite (605,438);
+						ClonesBackRight.scrollFactor.set(1.5, 0.8);
+						ClonesBackRight.frames = Paths.getSparrowAtlas('scopto/clonebackright');
+						ClonesBackRight.animation.addByPrefix('idle', 'clonesback right', 24, false);
+						ClonesBackRight.antialiasing = true;
+						if(FlxG.save.data.distractions){
+							add(ClonesBackRight);
+						}
+						
+				}			
+		}
 		if (FlxG.save.data.songPosition) // I dont wanna talk about this code :(
 			{
 				songPosBG = new FlxSprite(0, 10).loadGraphic(Paths.image('healthBar'));
@@ -1224,8 +1237,21 @@ class PlayState extends MusicBeatState
 				}
 			}
 			daBeats += 1;
+			if (songLowercase == 'the-clone')
+			{
+				for (x in 0...shootBeats.length)
+					{
+						var warnNoteTime = shootBeats[x];
+						var notethingidk:Float = warnNoteTime;
+						var warnNote:Note;
+						warnNote = new Note(notethingidk, 1, null, false, true);
+						warnNote.scrollFactor.set(0, 0);
+						unspawnNotes.push(warnNote);
+						warnNote.mustPress = true;
+						warnNote.x += FlxG.width / 2;
+					}
+			}
 		}
-
 		// trace(unspawnNotes.length);
 		// playerCounter += 1;
 
@@ -3279,7 +3305,9 @@ class PlayState extends MusicBeatState
 				if(FlxG.save.data.distractions){
 					bgGirls.dance();
 				}
-
+			case 'streetclones':
+				ClonesBackLeft.animation.play('idle');
+				ClonesBackRight.animation.play('idle');
 			case 'mall':
 				if(FlxG.save.data.distractions){
 					upperBoppers.animation.play('bop', true);
