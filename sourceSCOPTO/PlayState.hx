@@ -381,6 +381,18 @@ class PlayState extends MusicBeatState
 						add(bg);
 						FlxG.camera.zoom += 100;			
 				}	
+			case 'bloxiamhouse':
+				{
+						defaultCamZoom = 0.9;
+						curStage = 'bloxiamhouse';
+						var bg:FlxSprite = new FlxSprite(-290, -138).loadGraphic(Paths.image('scopto/bloxiamhouse'));
+						bg.antialiasing = true;
+						bg.scrollFactor.set(0.9, 0.9);
+						bg.active = false;
+						add(bg);
+						FlxG.camera.zoom += 100;			
+				}	
+					
 			case 'streetclones':
 				{
 						defaultCamZoom = 0.9;
@@ -685,7 +697,7 @@ class PlayState extends MusicBeatState
 		add(healthBar);
 
 		// Add Kade Engine watermark
-		kadeEngineWatermark = new FlxText(4,healthBarBG.y + 50,0,SONG.song + " " + (storyDifficulty == 2 ? "Hard" : storyDifficulty == 1 ? "Normal" : "Easy") + (Main.watermarks ? " - KE " + MainMenuState.kadeEngineVer : ""), 16);
+		kadeEngineWatermark = new FlxText(4,healthBarBG.y + 50,0,SONG.song + " " + (storyDifficulty == 2 ? "Hard" : storyDifficulty == 1 ? "Normal" : "Easy") + (Main.watermarks ? " - KE Scoptophobia " : ""), 16);
 		kadeEngineWatermark.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
 		kadeEngineWatermark.scrollFactor.set();
 		add(kadeEngineWatermark);
