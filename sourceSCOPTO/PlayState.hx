@@ -125,6 +125,7 @@ class PlayState extends MusicBeatState
 
 	private var camZooming:Bool = false;
 	private var curSong:String = "";
+	private var camZoom:Bool = false;
 
 	private var gfSpeed:Int = 1;
 	public var health:Float = 1; //making public because sethealth doesnt work without it
@@ -3269,7 +3270,12 @@ class PlayState extends MusicBeatState
             {
                 dad.playAnim('STARE', false);
 				trace('does this work');
+				camZooming = true;
             }
+		if (curStep == 250)
+			{
+				camZooming = false;
+			}
 
 		if (curBeat % 16 == 15 && SONG.song == 'Tutorial' && dad.curCharacter == 'gf' && curBeat > 16 && curBeat < 48)
 			{
