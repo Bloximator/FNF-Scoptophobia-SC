@@ -3265,7 +3265,7 @@ class PlayState extends MusicBeatState
 			boyfriend.playAnim('hey', true);
 		}
 		
-		if (curStep == 200 && curSong == 'the-clone')
+		if (curStep == 230 && curSong == 'the-clone')
             {
                 dad.playAnim('STARE', false);
 				trace('does this work');
