@@ -586,7 +586,7 @@ class Character extends FlxSprite
 				addOffset("HIT", 60, 0);
 				addOffset("PUNCH", 0, 150);
 				addOffset("WINDUP", 120, 190);
-				addOffset("STARE", 0, 0);
+				addOffset("STARE", -20, -8);
 
                 playAnim('idle');    
         }
