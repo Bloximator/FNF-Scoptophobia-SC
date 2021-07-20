@@ -141,6 +141,12 @@
 	<SubTexture name="clone stare0017" x="1121" y="4462" width="370" height="803" frameX="0" frameY="0" frameWidth="376" frameHeight="803"/>
 	<SubTexture name="clone stare0018" x="1121" y="4462" width="370" height="803" frameX="0" frameY="0" frameWidth="376" frameHeight="803"/>
 	<SubTexture name="clone stare0019" x="1121" y="4462" width="370" height="803" frameX="0" frameY="0" frameWidth="376" frameHeight="803"/>
+	<SubTexture name="clone stare0020" x="1121" y="4462" width="370" height="803" frameX="0" frameY="0" frameWidth="376" frameHeight="803"/>
+	<SubTexture name="clone stare0021" x="1121" y="4462" width="370" height="803" frameX="0" frameY="0" frameWidth="376" frameHeight="803"/>
+	<SubTexture name="clone stare0022" x="1121" y="4462" width="370" height="803" frameX="0" frameY="0" frameWidth="376" frameHeight="803"/>
+	<SubTexture name="clone stare0023" x="1121" y="4462" width="370" height="803" frameX="0" frameY="0" frameWidth="376" frameHeight="803"/>
+	<SubTexture name="clone stare0024" x="1121" y="4462" width="370" height="803" frameX="0" frameY="0" frameWidth="376" frameHeight="803"/>
+	<SubTexture name="clone stare0025" x="1121" y="4462" width="370" height="803" frameX="0" frameY="0" frameWidth="376" frameHeight="803"/>
 	<SubTexture name="clone up0000" x="1491" y="4462" width="417" height="878" frameX="0" frameY="-10" frameWidth="417" frameHeight="888"/>
 	<SubTexture name="clone up0001" x="1908" y="4462" width="398" height="883" frameX="-10" frameY="-5" frameWidth="417" frameHeight="888"/>
 	<SubTexture name="clone up0002" x="2306" y="4462" width="384" height="887" frameX="-17" frameY="-1" frameWidth="417" frameHeight="888"/>
