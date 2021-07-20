@@ -3265,22 +3265,11 @@ class PlayState extends MusicBeatState
 			boyfriend.playAnim('hey', true);
 		}
 		
-		if (dad.curCharacter == 'clone' && 4 == 2)
-			{
-				if (curSong == 'the-clone')
-					{
-						if (curStep == 220)
-						{
-							dad.playAnim('clone stare', true);
-							trace('balls?');
-						}
-						if (curStep == 220)
-						{
-							dad.playAnim('clone stare', true);
-							trace('balls?');
-						}	
-					}
-			}
+		if (curStep == 200 && curSong == 'the-clone')
+            {
+                dad.playAnim('STARE', false);
+				trace('does this work');
+            }
 
 		if (curBeat % 16 == 15 && SONG.song == 'Tutorial' && dad.curCharacter == 'gf' && curBeat > 16 && curBeat < 48)
 			{
