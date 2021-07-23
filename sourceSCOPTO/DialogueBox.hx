@@ -69,7 +69,7 @@ class DialogueBox extends FlxSpriteGroup
 				FlxG.sound.playMusic(Paths.music('ScoptoDialogue'), 0);
 				FlxG.sound.music.fadeIn(1, 0, 0.8);
 			case 'the-clone':
-				FlxG.sound.playMusic(Paths.music('ScoptoDialogue'), 0);
+				FlxG.sound.playMusic(Paths.music('cloneDialogue'), 0);
 				FlxG.sound.music.fadeIn(1, 0, 0.8);	
 			
 		}
