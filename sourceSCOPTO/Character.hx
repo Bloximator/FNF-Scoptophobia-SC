@@ -539,8 +539,6 @@ class Character extends FlxSprite
 				addOffset("singDOWN", 4, 0);
 
 				playAnim('idle');
-				
-				setGraphicSize(Std.int(width * 0.8));
 				updateHitbox();
 				
 			case 'alife':
@@ -560,8 +558,6 @@ class Character extends FlxSprite
 				addOffset("singDOWN", -104, -10);
 
 				playAnim('idle');
-				
-				setGraphicSize(Std.int(width * 0.95));
 				updateHitbox();
 				
 			 case 'clone':
