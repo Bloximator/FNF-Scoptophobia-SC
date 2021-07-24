@@ -572,7 +572,7 @@ class Character extends FlxSprite
 				animation.addByPrefix('HIT', 'clone hit', 24);
 				animation.addByPrefix('PUNCH', 'clone punch', 24);
 				animation.addByPrefix('WINDUP', 'clone windup', 24);
-				animation.addByPrefix('STARE', 'clone stare', 24);
+				animation.addByPrefix('STARE', 'clone stare', 24, false);
 
                 addOffset('idle', 0, 0);
                 addOffset("singUP", 0, 80);

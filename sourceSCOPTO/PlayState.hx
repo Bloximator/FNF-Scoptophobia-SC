@@ -1239,23 +1239,23 @@ class PlayState extends MusicBeatState
 				}
 			}
 			daBeats += 1;
-			if (songLowercase == 'the-clone')
-			{
-				for (x in 0...shootBeats.length)
-					{
-						var warnNoteTime = shootBeats[x];
-						var notethingidk:Float = warnNoteTime;
-						var warnNote:Note;
-						warnNote = new Note(notethingidk, 1, null, false, true);
-						warnNote.scrollFactor.set(0, 0);
-						unspawnNotes.push(warnNote);
-						warnNote.mustPress = true;
-						warnNote.x += FlxG.width / 2;
-					}
-			}
+			//if (songLowercase == 'the-clone')
+			//{
+			//	for (x in 0...shootBeats.length)
+			//		{
+			//			var warnNoteTime = shootBeats[x];
+			//			var notethingidk:Float = warnNoteTime;
+			//			var warnNote:Note;
+			//			warnNote = new Note(notethingidk, 1, null, false, true);
+			//			warnNote.scrollFactor.set(0, 0);
+			//			unspawnNotes.push(warnNote);
+			//			warnNote.mustPress = true;
+			//			warnNote.x += FlxG.width / 2;
+			//		}
+			//}
 		}
-		// trace(unspawnNotes.length);
-		// playerCounter += 1;
+		 trace(unspawnNotes.length);
+		 playerCounter += 1;
 
 		unspawnNotes.sort(sortByShit);
 
@@ -3269,11 +3269,11 @@ class PlayState extends MusicBeatState
 		
 		if (curStep == 200 && curSong == 'the-clone')
             {
-                dad.playAnim('STARE', false);
+                dad.playAnim('STARE', true);
             }
 		if (curStep == 1376 && curSong == 'the-clone')
 			{
-				dad.playAnim('STARE', false);
+				dad.playAnim('STARE', true);
 			}
 
 		if (curBeat % 16 == 15 && SONG.song == 'Tutorial' && dad.curCharacter == 'gf' && curBeat > 16 && curBeat < 48)
@@ -3291,8 +3291,25 @@ class PlayState extends MusicBeatState
 			if (curStep == 76)
 		    {
 	            boyfriend.playAnim('scared', true);
-            }	
-        }
+            }
+			
+		if (dad.curCharacter == 'bloximator' && SONG.song.toLowerCase() == 'bloxiam')
+		{
+			if (curStep == 955)
+			{
+				new FlxTimer().start(0.1, function(tmr:FlxTimer)
+					{
+						dad.alpha -= 0.05;
+						iconP2.alpha -= 0.05;
+	
+						if (dad.alpha > 0)
+						{
+							tmr.reset(0.1);
+						}
+					});
+				}
+			}
+		}
 		switch (curStage)
 		{
 			case 'school':
