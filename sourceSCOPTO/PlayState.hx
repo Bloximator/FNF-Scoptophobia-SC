@@ -3293,10 +3293,8 @@ class PlayState extends MusicBeatState
 	            boyfriend.playAnim('scared', true);
             }
 			
-		if (dad.curCharacter == 'bloximator' && SONG.song.toLowerCase() == 'bloxiam')
+		if (curStep == 955 && curSong == 'bloxiam')
 		{
-			if (curStep == 955)
-			{
 				new FlxTimer().start(0.1, function(tmr:FlxTimer)
 					{
 						dad.alpha -= 0.05;
@@ -3308,7 +3306,6 @@ class PlayState extends MusicBeatState
 						}
 					});
 				}
-			}
 		}
 		switch (curStage)
 		{
