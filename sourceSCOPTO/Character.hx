@@ -522,6 +522,25 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 				
+			case 'shalos':
+				// FUCKFUCFUCKFUCKFUCKFUCKDICKDICKDICKSHIETSHIETSHIET
+				iconColor = "A1A1A1";
+				tex = Paths.getSparrowAtlas('scopto/shalos', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'shalos', 24);
+				animation.addByPrefix('singUP', 'shalos', 24);
+				animation.addByPrefix('singRIGHT', 'shalos', 24);
+				animation.addByPrefix('singDOWN', 'shalos', 24);
+				animation.addByPrefix('singLEFT', 'shalos', 24);
+
+				addOffset('idle');
+				addOffset("singUP");
+				addOffset("singRIGHT");
+				addOffset("singLEFT");
+				addOffset("singDOWN");
+
+				playAnim('idle');
+				
 			case 'shpee':
 				iconColor = "FFa5a5a5";	
 				tex = Paths.getSparrowAtlas('scopto/Shpee');

@@ -41,6 +41,7 @@ class HealthIcon extends FlxSprite
 		animation.add('shpee', [25, 26], 0, false, isPlayer);
 		animation.add('alife', [27, 28], 0, false, isPlayer);
 		animation.add('clone', [29, 30], 0, false, isPlayer);
+		animation.add('shalos', [10, 11], 0, false, isPlayer);
 		animation.play(char);
 
 		switch(char)

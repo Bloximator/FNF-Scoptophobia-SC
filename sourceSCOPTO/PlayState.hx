@@ -392,8 +392,7 @@ class PlayState extends MusicBeatState
 						bg.active = false;
 						add(bg);
 						FlxG.camera.zoom += 100;			
-				}	
-					
+				}						
 			case 'streetclones':
 				{
 						defaultCamZoom = 0.9;
@@ -405,7 +404,18 @@ class PlayState extends MusicBeatState
 						add(bg);
 						FlxG.camera.zoom += 100;
 						
-				}			
+				}	
+			case 'shalosbg':
+				{
+						defaultCamZoom = 0.9;
+						curStage = 'shalosbg';
+						var bg:FlxSprite = new FlxSprite(-290, -138).loadGraphic(Paths.image('scopto/shalosbg'));
+						bg.antialiasing = true;
+						bg.scrollFactor.set(0.9, 0.9);
+						bg.active = false;
+						add(bg);
+						FlxG.camera.zoom += 100;			
+				}				
 			default:
 			{
 					defaultCamZoom = 0.9;
@@ -505,6 +515,9 @@ class PlayState extends MusicBeatState
 				dad.y -= 100;
 			case 'clone':
 				dad.y -= 100;
+			case 'shalos':
+				dad.y -= 0;
+				dad.x -= 0;
 		}
 		
 		boyfriend = new Boyfriend(770, 450, SONG.player1);
