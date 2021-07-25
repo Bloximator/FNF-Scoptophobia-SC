@@ -158,6 +158,7 @@ class PlayState extends MusicBeatState
 
 	public var dialogue:Array<String> = ['dad:blah blah blah', 'bf:coolswag'];
 
+	var bloxiamhouse:FlxSprite;
 	var halloweenBG:FlxSprite;
 	var isHalloween:Bool = false;
 
@@ -386,11 +387,11 @@ class PlayState extends MusicBeatState
 				{
 						defaultCamZoom = 0.9;
 						curStage = 'bloxiamhouse';
-						var bg:FlxSprite = new FlxSprite(-290, -138).loadGraphic(Paths.image('scopto/bloxiamhouse'));
-						bg.antialiasing = true;
-						bg.scrollFactor.set(0.9, 0.9);
-						bg.active = false;
-						add(bg);
+						bloxiamhouse = new FlxSprite(-290, -138).loadGraphic(Paths.image('scopto/bloxiamhouse'));
+						bloxiamhouse.antialiasing = true;
+						bloxiamhouse.scrollFactor.set(0.9, 0.9);
+						bloxiamhouse.active = false;
+						add(bloxiamhouse);
 						FlxG.camera.zoom += 100;			
 				}						
 			case 'streetclones':
@@ -407,7 +408,7 @@ class PlayState extends MusicBeatState
 				}	
 			case 'shalosbg':
 				{
-						defaultCamZoom = 0.9;
+						defaultCamZoom = 1;
 						curStage = 'shalosbg';
 						var bg:FlxSprite = new FlxSprite(-290, -138).loadGraphic(Paths.image('scopto/shalosbg'));
 						bg.antialiasing = true;
@@ -515,9 +516,6 @@ class PlayState extends MusicBeatState
 				dad.y -= 100;
 			case 'clone':
 				dad.y -= 100;
-			case 'shalos':
-				dad.y -= 0;
-				dad.x -= 0;
 		}
 		
 		boyfriend = new Boyfriend(770, 450, SONG.player1);
@@ -575,6 +573,14 @@ class PlayState extends MusicBeatState
 
 				gf.x += 350;
 				gf.y += -140;
+			case 'streetclones':
+				gf.visible = false;
+			case 'shalosbg':
+				gf.visible = false;
+				dad.x -= 0;
+				dad.y += 400;
+				boyfriend.x += 100;
+				boyfriend.y -= 100;
 		}
 
 		add(gf);
@@ -1425,7 +1431,6 @@ class PlayState extends MusicBeatState
 			strumLineNotes.add(babyArrow);
 		}
 	}
-
 	function tweenCamIn():Void
 	{
 		FlxTween.tween(FlxG.camera, {zoom: 1.3}, (Conductor.stepCrochet * 4 / 1000), {ease: FlxEase.elasticInOut});
@@ -3305,20 +3310,16 @@ class PlayState extends MusicBeatState
 		    {
 	            boyfriend.playAnim('scared', true);
             }
-			
-		if (curStep == 955 && curSong == 'bloxiam')
-		{
-				new FlxTimer().start(0.1, function(tmr:FlxTimer)
-					{
-						dad.alpha -= 0.05;
-						iconP2.alpha -= 0.05;
-	
-						if (dad.alpha > 0)
-						{
-							tmr.reset(0.1);
-						}
-					});
-				}
+		if (curSong == 'bloxiam') 
+			{
+				switch (curBeat)
+				{
+					case 239:
+						FlxTween.tween(bloxiamhouse, {alpha: 0}, 1);
+						FlxTween.tween(dad, {alpha: 0}, 1);
+						FlxTween.tween(gf, {alpha: 0}, 1.);
+					}
+			}
 		}
 		switch (curStage)
 		{
