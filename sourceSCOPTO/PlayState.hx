@@ -3328,8 +3328,8 @@ class PlayState extends MusicBeatState
 					bgGirls.dance();
 				}
 			case 'streetclones':
-				ClonesBackLeft.animation.play('idle');
-				ClonesBackRight.animation.play('idle');
+				ClonesBackLeft.animation.play('idle', true);
+				ClonesBackRight.animation.play('idle', true);
 			case 'mall':
 				if(FlxG.save.data.distractions){
 					upperBoppers.animation.play('bop', true);
