@@ -2184,10 +2184,19 @@ class PlayState extends MusicBeatState
 							}
 							else
 							{
-								health -= 0.075;
-								vocals.volume = 0;
-								if (theFunne)
-									noteMiss(daNote.noteData, daNote);
+								if (daNote.noteType == 2)
+									{
+										boyfriend.animation.play('hit');
+										dad.animation.play('PUNCH');
+										health -= 50;
+									}
+								if (daNote.noteType == 1 || daNote.noteType == 0)
+									{
+										health -= 0.075;
+										vocals.volume = 0;
+										if (theFunne)
+											noteMiss(daNote.noteData, daNote);
+									}
 							}
 		
 							daNote.visible = false;
@@ -2387,8 +2396,8 @@ class PlayState extends MusicBeatState
 					case 'shit':
 						if (daNote.noteType == 2)
 							{
-								boyfriend.animation.play('attack');
-								dad.animation.play('HIT');
+								boyfriend.animation.play('attack', true);
+								dad.animation.play('HIT', true);
 							}
 						if (daNote.noteType == 1 || daNote.noteType == 0)
 							{
@@ -2404,8 +2413,8 @@ class PlayState extends MusicBeatState
 					case 'bad':
 						if (daNote.noteType == 2)
 							{
-								boyfriend.animation.play('attack');
-								dad.animation.play('HIT');
+								boyfriend.animation.play('attack', true);
+								dad.animation.play('HIT', true);
 							}
 						if (daNote.noteType == 1 || daNote.noteType == 0)
 							{
@@ -2420,8 +2429,8 @@ class PlayState extends MusicBeatState
 					case 'good':
 						if (daNote.noteType == 2)
 							{
-								boyfriend.animation.play('attack');
-								dad.animation.play('HIT');
+								boyfriend.animation.play('attack', true);
+								dad.animation.play('HIT', true);
 							}
 						if (daNote.noteType == 1 || daNote.noteType == 0)
 							{
@@ -2437,8 +2446,8 @@ class PlayState extends MusicBeatState
 					case 'sick':
 						if (daNote.noteType == 2)
 							{
-								boyfriend.animation.play('attack');
-								dad.animation.play('HIT');
+								boyfriend.animation.play('attack', true);
+								dad.animation.play('HIT', true);
 							}
 						if (daNote.noteType == 1 || daNote.noteType == 0)
 							{
