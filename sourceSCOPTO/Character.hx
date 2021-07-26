@@ -523,7 +523,7 @@ class Character extends FlxSprite
 				playAnim('idle');
 				
 			case 'shalos':
-				// FUCKFUCFUCKFUCKFUCKFUCKDICKDICKDICKSHIETSHIETSHIET
+				// shalose
 				iconColor = "A1A1A1";
 				tex = Paths.getSparrowAtlas('scopto/shalos', 'shared');
 				frames = tex;
@@ -588,7 +588,7 @@ class Character extends FlxSprite
                 animation.addByPrefix('singRIGHT', 'clone right', 24);
                 animation.addByPrefix('singDOWN', 'clone down', 24);
                 animation.addByPrefix('singLEFT', 'clone left', 24);
-				animation.addByPrefix('HIT', 'clone hit', 24);
+				animation.addByPrefix('HIT', 'clone hit', 24, false);
 				animation.addByPrefix('PUNCH', 'clone punch', 24);
 				animation.addByPrefix('WINDUP', 'clone windup', 24);
 				animation.addByPrefix('STARE', 'clone stare', 24, false);

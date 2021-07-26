@@ -19,7 +19,6 @@ class Note extends FlxSprite
 
 	public var mustPress:Bool = false;
 	public var noteData:Int = 0;
-	public var CautionAttackNotes:Bool = false;
 	public var canBeHit:Bool = false;
 	public var tooLate:Bool = false;
 	public var wasGoodHit:Bool = false;
@@ -27,6 +26,7 @@ class Note extends FlxSprite
 	public var modifiedByLua:Bool = false;
 	public var sustainLength:Float = 0;
 	public var isSustainNote:Bool = false;
+	public var noteType:Int = 0;
 
 	public var noteScore:Float = 1;
 
@@ -38,79 +38,120 @@ class Note extends FlxSprite
 
 	public var rating:String = "shit";
 
-	public function new(strumTime:Float, noteData:Int, ?prevNote:Note, ?sustainNote:Bool = false, ?_CautionAttackNotes:Bool = false)
-	{
-		super();
-
-		if (prevNote == null)
-			prevNote = this;
-
-		this.prevNote = prevNote;
-		isSustainNote = sustainNote;
-		CautionAttackNotes = _CautionAttackNotes;
-
-		x += 50;
-		// MAKE SURE ITS DEFINITELY OFF SCREEN?
-		y -= 2000;
-		this.strumTime = strumTime;
-
-		if (this.strumTime < 0 )
-			this.strumTime = 0;
-
-		this.noteData = noteData;
-
-		var daStage:String = PlayState.curStage;
-
-		if (!CautionAttackNotes)
+	public function new(strumTime:Float, noteData:Int, ?prevNote:Note, ?sustainNote:Bool = false, ?noteType:Int = 0)
 		{
+			super();
+ 
+			if (prevNote == null)
+				prevNote = this;
+			this.noteType = noteType;
+			this.prevNote = prevNote;
+			isSustainNote = sustainNote;
+ 
+			x += 50;
+			// MAKE SURE ITS DEFINITELY OFF SCREEN?
+			y -= 2000;
+			this.strumTime = strumTime;
+ 
+			if (this.strumTime < 0 )
+				this.strumTime = 0;
+ 
+			this.noteData = noteData;
+ 
+			var daStage:String = PlayState.curStage;
+ 
 			switch (PlayState.SONG.noteStyle)
 			{
 				case 'pixel':
 					loadGraphic(Paths.image('weeb/pixelUI/arrows-pixels','week6'), true, 17, 17);
-	
-					animation.add('greenScroll', [6]);
-					animation.add('redScroll', [7]);
-					animation.add('blueScroll', [5]);
-					animation.add('purpleScroll', [4]);
-	
+ 
+					if (noteType == 2)
+						{
+							animation.add('greenScroll', [22]);
+							animation.add('redScroll', [23]);
+							animation.add('blueScroll', [21]);
+							animation.add('purpleScroll', [20]);
+						}
+					else
+						{
+							animation.add('greenScroll', [6]);
+							animation.add('redScroll', [7]);
+							animation.add('blueScroll', [5]);
+							animation.add('purpleScroll', [4]);
+						}
+ 
 					if (isSustainNote)
 					{
 						loadGraphic(Paths.image('weeb/pixelUI/arrowEnds','week6'), true, 7, 6);
-	
+ 
 						animation.add('purpleholdend', [4]);
 						animation.add('greenholdend', [6]);
 						animation.add('redholdend', [7]);
 						animation.add('blueholdend', [5]);
-	
+ 
 						animation.add('purplehold', [0]);
 						animation.add('greenhold', [2]);
 						animation.add('redhold', [3]);
 						animation.add('bluehold', [1]);
 					}
-	
+ 
 					setGraphicSize(Std.int(width * PlayState.daPixelZoom));
 					updateHitbox();
 				default:
-					frames = Paths.getSparrowAtlas('NOTE_assets');
-	
-					animation.addByPrefix('greenScroll', 'green0');
-					animation.addByPrefix('redScroll', 'red0');
-					animation.addByPrefix('blueScroll', 'blue0');
-					animation.addByPrefix('purpleScroll', 'purple0');
-	
-					animation.addByPrefix('purpleholdend', 'pruple end hold');
-					animation.addByPrefix('greenholdend', 'green hold end');
-					animation.addByPrefix('redholdend', 'red hold end');
-					animation.addByPrefix('blueholdend', 'blue hold end');
-	
-					animation.addByPrefix('purplehold', 'purple hold piece');
-					animation.addByPrefix('greenhold', 'green hold piece');
-					animation.addByPrefix('redhold', 'red hold piece');
-					animation.addByPrefix('bluehold', 'blue hold piece');
-	
-					setGraphicSize(Std.int(width * 0.7));
-					updateHitbox();
-					antialiasing = true;
+						frames = Paths.getSparrowAtlas('NOTE_assets');
+						var fuckingSussy = Paths.getSparrowAtlas('attack');
+						for(amogus in fuckingSussy.frames)
+							{
+								this.frames.pushFrame(amogus);
+							}
+ 
+						switch(noteType)
+						{
+							case 2:
+							{
+								frames = Paths.getSparrowAtlas('attack');
+								animation.addByPrefix('greenScroll', 'green');
+								animation.addByPrefix('redScroll', 'red');
+								animation.addByPrefix('blueScroll', 'blue');
+								animation.addByPrefix('purpleScroll', 'purple');
+ 
+								animation.addByPrefix('purpleholdend', 'pruple end hold');
+								animation.addByPrefix('greenholdend', 'green hold end');
+								animation.addByPrefix('redholdend', 'red hold end');
+								animation.addByPrefix('blueholdend', 'blue hold end');
+ 
+								animation.addByPrefix('purplehold', 'purple hold piece');
+								animation.addByPrefix('greenhold', 'green hold piece');
+								animation.addByPrefix('redhold', 'red hold piece');
+								animation.addByPrefix('bluehold', 'blue hold piece');
+ 
+								setGraphicSize(Std.int(width * 0.7));
+								updateHitbox();
+								antialiasing = true;
+							}
+							default:
+							{
+								frames = Paths.getSparrowAtlas('NOTE_assets');
+								animation.addByPrefix('greenScroll', 'green0');
+								animation.addByPrefix('redScroll', 'red0');
+								animation.addByPrefix('blueScroll', 'blue0');
+								animation.addByPrefix('purpleScroll', 'purple0');
+ 
+								animation.addByPrefix('purpleholdend', 'pruple end hold');
+								animation.addByPrefix('greenholdend', 'green hold end');
+								animation.addByPrefix('redholdend', 'red hold end');
+								animation.addByPrefix('blueholdend', 'blue hold end');
+ 
+								animation.addByPrefix('purplehold', 'purple hold piece');
+								animation.addByPrefix('greenhold', 'green hold piece');
+								animation.addByPrefix('redhold', 'red hold piece');
+								animation.addByPrefix('bluehold', 'blue hold piece');
+ 
+								setGraphicSize(Std.int(width * 0.7));
+								updateHitbox();
+								antialiasing = true;
+							}
+						}
 			}
 	
 			switch (noteData)
@@ -128,12 +169,6 @@ class Note extends FlxSprite
 					x += swagWidth * 3;
 					animation.play('redScroll');
 			}
-		}
-		else
-		{
-			y -= 20;
-			loadGraphic(Paths.image('CautionShit'));
-		}
 
 		// trace(prevNote);
 
