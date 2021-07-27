@@ -2191,6 +2191,10 @@ class PlayState extends MusicBeatState
 										health -= 2;
 										FlxG.sound.play(Paths.sound('BFHIT'));	
 									}
+								if (daNote.noteType == 3)
+									{
+										health -= 0;
+									}
 								if (daNote.noteType == 1 || daNote.noteType == 0)
 									{
 										health -= 0.075;
@@ -2401,6 +2405,11 @@ class PlayState extends MusicBeatState
 								dad.playAnim('HIT', true);
 								FlxG.sound.play(Paths.sound('BFATTACK'));	
 							}
+						if (daNote.noteType == 3)
+							{
+								health -= 100;
+								FlxG.sound.play(Paths.sound('BFHIT'));
+							}
 						if (daNote.noteType == 1 || daNote.noteType == 0)
 							{
 								score = -300;
@@ -2419,6 +2428,11 @@ class PlayState extends MusicBeatState
 								dad.playAnim('HIT', true);
 								FlxG.sound.play(Paths.sound('BFATTACK'));
 							}
+						if (daNote.noteType == 3)
+							{
+								health -= 100;
+								FlxG.sound.play(Paths.sound('BFHIT'));
+							}
 						if (daNote.noteType == 1 || daNote.noteType == 0)
 							{
 								daRating = 'bad';
@@ -2435,6 +2449,11 @@ class PlayState extends MusicBeatState
 								boyfriend.playAnim('attack', true);
 								dad.playAnim('HIT', true);
 								FlxG.sound.play(Paths.sound('BFATTACK'));
+							}
+						if (daNote.noteType == 3)
+							{
+								health -= 100;
+								FlxG.sound.play(Paths.sound('BFHIT'));
 							}
 						if (daNote.noteType == 1 || daNote.noteType == 0)
 							{
@@ -2453,6 +2472,11 @@ class PlayState extends MusicBeatState
 								boyfriend.playAnim('attack', true);
 								dad.playAnim('HIT', true);
 								FlxG.sound.play(Paths.sound('BFATTACK'));
+							}
+						if (daNote.noteType == 3)
+							{
+								health -= 100;
+								FlxG.sound.play(Paths.sound('BFHIT'));
 							}
 						if (daNote.noteType == 1 || daNote.noteType == 0)
 							{

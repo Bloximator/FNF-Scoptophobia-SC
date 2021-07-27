@@ -98,8 +98,9 @@ class Note extends FlxSprite
 					setGraphicSize(Std.int(width * PlayState.daPixelZoom));
 					updateHitbox();
 				default:
+						//i fucking hate this code (not really)
 						frames = Paths.getSparrowAtlas('NOTE_assets');
-						var fuckingSussy = Paths.getSparrowAtlas('attack');
+						var fuckingSussy = Paths.getSparrowAtlas('danger_notes');
 						for(amogus in fuckingSussy.frames)
 							{
 								this.frames.pushFrame(amogus);
@@ -109,7 +110,7 @@ class Note extends FlxSprite
 						{
 							case 2:
 							{
-								frames = Paths.getSparrowAtlas('attack');
+								frames = Paths.getSparrowAtlas('danger_notes');
 								animation.addByPrefix('greenScroll', 'attack0');
 								animation.addByPrefix('redScroll', 'attack0');
 								animation.addByPrefix('blueScroll', 'attack0');
@@ -129,6 +130,29 @@ class Note extends FlxSprite
 								updateHitbox();
 								antialiasing = true;
 							}
+						case 3:
+							{
+								frames = Paths.getSparrowAtlas('danger_notes');
+								animation.addByPrefix('greenScroll', 'death0');
+								animation.addByPrefix('redScroll', 'death0');
+								animation.addByPrefix('blueScroll', 'death0');
+								animation.addByPrefix('purpleScroll', 'death0');
+	
+								animation.addByPrefix('purpleholdend', 'death end hold');
+								animation.addByPrefix('greenholdend', 'death hold end');
+								animation.addByPrefix('redholdend', 'death hold end');
+								animation.addByPrefix('blueholdend', 'death hold end');
+	
+								animation.addByPrefix('purplehold', 'death hold piece');
+								animation.addByPrefix('greenhold', 'death hold piece');
+								animation.addByPrefix('redhold', 'death hold piece');
+								animation.addByPrefix('bluehold', 'death hold piece');
+	
+								setGraphicSize(Std.int(width * 0.8));
+								updateHitbox();
+								antialiasing = true;
+							}
+							
 							default:
 							{
 								frames = Paths.getSparrowAtlas('NOTE_assets');

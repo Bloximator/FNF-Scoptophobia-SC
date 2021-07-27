@@ -1405,6 +1405,11 @@ class ChartingState extends MusicBeatState
 						noteType = 2;
 						FlxG.sound.play(Paths.sound('ATTACKNOTE'));
 					}
+				if (FlxG.keys.pressed.SHIFT)
+					{
+						noteType = 3;
+						FlxG.sound.play(Paths.sound('DEATHNOTE'));
+					}
 				if (n != null)
 					_song.notes[curSection].sectionNotes.push([n.strumTime, n.noteData, n.sustainLength, n.noteType]);
 				else
