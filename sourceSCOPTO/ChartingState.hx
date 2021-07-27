@@ -1398,12 +1398,12 @@ class ChartingState extends MusicBeatState
 				if (FlxG.keys.pressed.ONE)
 					{
 						noteType = 1;
-						FlxG.sound.play('ANGRY');						
+						FlxG.sound.play(Paths.sound('ANGRY'));						
 					}
 				if (FlxG.keys.pressed.ALT)
 					{
 						noteType = 2;
-						FlxG.sound.play('ANGRY');
+						FlxG.sound.play(Paths.sound('ANGRY'));
 					}
 				if (n != null)
 					_song.notes[curSection].sectionNotes.push([n.strumTime, n.noteData, n.sustainLength, n.noteType]);

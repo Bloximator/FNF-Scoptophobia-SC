@@ -99,7 +99,7 @@ class Note extends FlxSprite
 					updateHitbox();
 				default:
 						frames = Paths.getSparrowAtlas('NOTE_assets');
-						var fuckingSussy = Paths.getSparrowAtlas('NOTE_assets');
+						var fuckingSussy = Paths.getSparrowAtlas('attack');
 						for(amogus in fuckingSussy.frames)
 							{
 								this.frames.pushFrame(amogus);
@@ -109,21 +109,21 @@ class Note extends FlxSprite
 						{
 							case 2:
 							{
-								frames = Paths.getSparrowAtlas('NOTE_assets');
-								animation.addByPrefix('greenScroll', 'green0');
-								animation.addByPrefix('redScroll', 'red0');
-								animation.addByPrefix('blueScroll', 'blue0');
-								animation.addByPrefix('purpleScroll', 'purple0');
+								frames = Paths.getSparrowAtlas('attack');
+								animation.addByPrefix('greenScroll', 'attack0');
+								animation.addByPrefix('redScroll', 'attack0');
+								animation.addByPrefix('blueScroll', 'attack0');
+								animation.addByPrefix('purpleScroll', 'attack0');
  
-								animation.addByPrefix('purpleholdend', 'pruple end hold');
-								animation.addByPrefix('greenholdend', 'green hold end');
-								animation.addByPrefix('redholdend', 'red hold end');
-								animation.addByPrefix('blueholdend', 'blue hold end');
+								animation.addByPrefix('purpleholdend', 'attack end hold');
+								animation.addByPrefix('greenholdend', 'attack hold end');
+								animation.addByPrefix('redholdend', 'attack hold end');
+								animation.addByPrefix('blueholdend', 'attack hold end');
  
-								animation.addByPrefix('purplehold', 'purple hold piece');
-								animation.addByPrefix('greenhold', 'green hold piece');
-								animation.addByPrefix('redhold', 'red hold piece');
-								animation.addByPrefix('bluehold', 'blue hold piece');
+								animation.addByPrefix('purplehold', 'attack hold piece');
+								animation.addByPrefix('greenhold', 'attack hold piece');
+								animation.addByPrefix('redhold', 'attack hold piece');
+								animation.addByPrefix('bluehold', 'attack hold piece');
  
 								setGraphicSize(Std.int(width * 0.7));
 								updateHitbox();
