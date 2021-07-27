@@ -2188,7 +2188,7 @@ class PlayState extends MusicBeatState
 									{
 										boyfriend.playAnim('hit');
 										dad.animation.play('PUNCH');
-										health -= 2;
+										health -= 0.3;
 										FlxG.sound.play(Paths.sound('BFHIT'));	
 									}
 								if (daNote.noteType == 3)
