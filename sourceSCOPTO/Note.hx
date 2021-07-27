@@ -125,7 +125,7 @@ class Note extends FlxSprite
 								animation.addByPrefix('redhold', 'attack hold piece');
 								animation.addByPrefix('bluehold', 'attack hold piece');
  
-								setGraphicSize(Std.int(width * 0.7));
+								setGraphicSize(Std.int(width * 0.8));
 								updateHitbox();
 								antialiasing = true;
 							}
