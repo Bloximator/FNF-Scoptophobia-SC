@@ -544,7 +544,7 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 				
-			case 'shpee':
+			case 'shpeeold':
 				iconColor = "FFa5a5a5";	
 				tex = Paths.getSparrowAtlas('scopto/Shpee');
 				frames = tex;
@@ -592,7 +592,7 @@ class Character extends FlxSprite
                 animation.addByPrefix('singDOWN', 'clone down', 24);
                 animation.addByPrefix('singLEFT', 'clone left', 24);
 				animation.addByPrefix('HIT', 'clone hit', 24, false);
-				animation.addByPrefix('PUNCH', 'clone punch', 24);
+				animation.addByPrefix('PUNCH', 'clone punch', 24, false);
 				animation.addByPrefix('WINDUP', 'clone windup', 24);
 				animation.addByPrefix('STARE', 'clone stare', 24, false);
 
@@ -606,7 +606,25 @@ class Character extends FlxSprite
 				addOffset("WINDUP", 120, 190);
 				addOffset("STARE", -20, -8);
 
-                playAnim('idle');    
+                playAnim('idle');
+			case 'shpee':
+				iconColor = "FFa5a5a5";	
+				tex = Paths.getSparrowAtlas('scopto/shpeeredo');
+				frames = tex;
+				animation.addByPrefix('idle', 'shalos idle', 24);
+				animation.addByPrefix('singUP', 'shalos up', 24);
+				animation.addByPrefix('singRIGHT', 'shalos right', 24);
+				animation.addByPrefix('singDOWN', 'shalos down', 24);
+				animation.addByPrefix('singLEFT', 'shalos left', 24);
+
+				addOffset('idle');
+				addOffset("singUP", 0, 20);
+				addOffset("singRIGHT", -20, 0);
+				addOffset("singLEFT", 0, 50);
+				addOffset("singDOWN");
+
+				playAnim('idle');
+				updateHitbox();    
         }
 
 		dance();

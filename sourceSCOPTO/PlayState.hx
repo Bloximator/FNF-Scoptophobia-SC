@@ -504,9 +504,9 @@ class PlayState extends MusicBeatState
 				dad.y += 100;
 				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
 			case 'shpee':
-				dad.x -= 50;
-				dad.y -= 200;
-				dad.scale.set(0.8, 0.8);
+				dad.x -= 20;
+				dad.y -= 130;
+				dad.scale.set(0.9, 0.9);
 			case 'alife':
 				camPos.y += 100;
 				dad.x -= 50;
