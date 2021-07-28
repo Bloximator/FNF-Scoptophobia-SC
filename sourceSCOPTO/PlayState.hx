@@ -2401,6 +2401,7 @@ class PlayState extends MusicBeatState
 					case 'shit':
 						if (daNote.noteType == 2)
 							{
+								boyfriend.visible = false;
 								boyfriend.playAnim('attack', true);
 								dad.playAnim('HIT', true);
 								FlxG.sound.play(Paths.sound('BFATTACK'));	
@@ -3090,17 +3091,23 @@ class PlayState extends MusicBeatState
 					else
 						totalNotesHit += 1;
 	
-
-					switch (note.noteData)
+					if (note.noteType == 2)
 					{
-						case 2:
-							boyfriend.playAnim('singUP', true);
-						case 3:
-							boyfriend.playAnim('singRIGHT', true);
-						case 1:
-							boyfriend.playAnim('singDOWN', true);
-						case 0:
-							boyfriend.playAnim('singLEFT', true);
+						boyfriend.playAnim('attack', true);
+					}
+					else
+					{
+						switch (note.noteData)
+						{
+							case 2:
+								boyfriend.playAnim('singUP', true);
+							case 3:
+								boyfriend.playAnim('singRIGHT', true);
+							case 1:
+								boyfriend.playAnim('singDOWN', true);
+							case 0:
+								boyfriend.playAnim('singLEFT', true);
+						}
 					}
 		
 					#if windows
