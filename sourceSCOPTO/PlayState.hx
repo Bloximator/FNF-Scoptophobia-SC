@@ -2401,7 +2401,6 @@ class PlayState extends MusicBeatState
 					case 'shit':
 						if (daNote.noteType == 2)
 							{
-								boyfriend.visible = false;
 								boyfriend.playAnim('attack', true);
 								dad.playAnim('HIT', true);
 								FlxG.sound.play(Paths.sound('BFATTACK'));	
