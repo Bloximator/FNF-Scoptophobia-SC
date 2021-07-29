@@ -2187,14 +2187,17 @@ class PlayState extends MusicBeatState
 							{
 								if (daNote.noteType == 2)
 									{
-										boyfriend.playAnim('hit');
-										dad.animation.play('PUNCH');
+										boyfriend.playAnim('hit', true);
+										dad.animation.play('PUNCH', true);
 										health -= 0.5;
 										FlxG.sound.play(Paths.sound('BFHIT'));	
 									}
 								if (daNote.noteType == 3)
 									{
 										health -= 0;
+										boyfriend.playAnim('dodge', true);
+										dad.animation.play('PUNCH', true);
+										FlxG.sound.play(Paths.sound('BFDODGE'));	
 									}
 								if (daNote.noteType == 1 || daNote.noteType == 0)
 									{
