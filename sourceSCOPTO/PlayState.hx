@@ -512,6 +512,7 @@ class PlayState extends MusicBeatState
 				dad.x -= 50;
 				dad.y -= 20;
 				dad.scale.set(0.7, 0.7);
+				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
 			case 'bloximator':
 				dad.y -= 100;
 			case 'clone':
@@ -2401,7 +2402,6 @@ class PlayState extends MusicBeatState
 					case 'shit':
 						if (daNote.noteType == 2)
 							{
-								boyfriend.playAnim('attack', true);
 								dad.playAnim('HIT', true);
 								FlxG.sound.play(Paths.sound('BFATTACK'));	
 							}
@@ -2424,7 +2424,6 @@ class PlayState extends MusicBeatState
 					case 'bad':
 						if (daNote.noteType == 2)
 							{
-								boyfriend.playAnim('attack', true);
 								dad.playAnim('HIT', true);
 								FlxG.sound.play(Paths.sound('BFATTACK'));
 							}
@@ -2446,7 +2445,6 @@ class PlayState extends MusicBeatState
 					case 'good':
 						if (daNote.noteType == 2)
 							{
-								boyfriend.playAnim('attack', true);
 								dad.playAnim('HIT', true);
 								FlxG.sound.play(Paths.sound('BFATTACK'));
 							}
@@ -2469,7 +2467,6 @@ class PlayState extends MusicBeatState
 					case 'sick':
 						if (daNote.noteType == 2)
 							{
-								boyfriend.playAnim('attack', true);
 								dad.playAnim('HIT', true);
 								FlxG.sound.play(Paths.sound('BFATTACK'));
 							}
