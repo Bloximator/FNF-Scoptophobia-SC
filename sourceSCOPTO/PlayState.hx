@@ -3357,6 +3357,10 @@ class PlayState extends MusicBeatState
 			{
 				dad.playAnim('STARE', true);
 			}
+		if (curStep == 2036 && curSong == 'the-clone')
+			{
+				boyfriend.playAnim('lookathim', true);
+			}
 
 		if (curBeat % 16 == 15 && SONG.song == 'Tutorial' && dad.curCharacter == 'gf' && curBeat > 16 && curBeat < 48)
 			{
