@@ -3355,7 +3355,15 @@ class PlayState extends MusicBeatState
             }
 		if (curStep == 1376 && curSong == 'the-clone')
 			{
-				boyfriend.playAnim('lookathim', true);
+				dad.playAnim('STARE', true);
+			}
+			if (curSong == 'bloxiam') 
+				{
+					switch (curBeat)
+					{
+						case 504:
+							boyfriend.playAnim('lookathim', true);
+				}
 			}
 
 		if (curBeat % 16 == 15 && SONG.song == 'Tutorial' && dad.curCharacter == 'gf' && curBeat > 16 && curBeat < 48)
