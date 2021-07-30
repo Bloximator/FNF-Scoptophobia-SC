@@ -3457,7 +3457,7 @@ class PlayState extends MusicBeatState
 	function bflookathim()
 		{
 			var bflookatthisretard:FlxSprite = new FlxSprite(767, 447);
-			bflookatthisretard.frames = Paths.getSparrowAtlas('scopto/bflookathim');
+			bflookatthisretard.frames = Paths.getSparrowAtlas('scopto/bfalternativeanims');
 			bflookatthisretard.animation.addByPrefix('idle', 'BF look at this dude woohoohoohoo', 24, false);
 			bflookatthisretard.scrollFactor.set(1, 1);
 			bflookatthisretard.updateHitbox();
