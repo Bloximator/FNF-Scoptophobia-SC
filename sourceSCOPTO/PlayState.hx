@@ -2187,16 +2187,15 @@ class PlayState extends MusicBeatState
 							{
 								if (daNote.noteType == 2)
 									{
-										boyfriend.playAnim('hit', true);
-										dad.animation.play('PUNCH', true);
-										health -= 0.5;
+										bfhit();
+										clonepunch();
+										health -= 1;
 										FlxG.sound.play(Paths.sound('BFHIT'));	
 									}
 								if (daNote.noteType == 3)
 									{
+										// the animations are too much for the game to handle sorry bloxiam
 										health -= 0;
-										boyfriend.playAnim('dodge', true);
-										dad.animation.play('PUNCH', true);
 										FlxG.sound.play(Paths.sound('BFDODGE'));	
 									}
 								if (daNote.noteType == 1 || daNote.noteType == 0)
@@ -2405,7 +2404,7 @@ class PlayState extends MusicBeatState
 					case 'shit':
 						if (daNote.noteType == 2)
 							{
-								dad.playAnim('HIT', true);
+								clonehit();
 								FlxG.sound.play(Paths.sound('BFATTACK'));	
 							}
 						if (daNote.noteType == 3)
@@ -2427,7 +2426,7 @@ class PlayState extends MusicBeatState
 					case 'bad':
 						if (daNote.noteType == 2)
 							{
-								dad.playAnim('HIT', true);
+								clonehit();
 								FlxG.sound.play(Paths.sound('BFATTACK'));
 							}
 						if (daNote.noteType == 3)
@@ -2448,7 +2447,7 @@ class PlayState extends MusicBeatState
 					case 'good':
 						if (daNote.noteType == 2)
 							{
-								dad.playAnim('HIT', true);
+								clonehit();
 								FlxG.sound.play(Paths.sound('BFATTACK'));
 							}
 						if (daNote.noteType == 3)
@@ -2470,7 +2469,7 @@ class PlayState extends MusicBeatState
 					case 'sick':
 						if (daNote.noteType == 2)
 							{
-								dad.playAnim('HIT', true);
+								clonehit();
 								FlxG.sound.play(Paths.sound('BFATTACK'));
 							}
 						if (daNote.noteType == 3)
@@ -3092,7 +3091,7 @@ class PlayState extends MusicBeatState
 	
 					if (note.noteType == 2)
 					{
-						boyfriend.playAnim('attack', true);
+						bfattack();
 					}
 					else
 					{
@@ -3351,11 +3350,11 @@ class PlayState extends MusicBeatState
 		
 		if (curStep == 200 && curSong == 'the-clone')
             {
-                dad.playAnim('STARE', true);
+                clonestare();
             }
 		if (curStep == 1376 && curSong == 'the-clone')
 			{
-				dad.playAnim('STARE', true);
+				clonestare();
 			}
 		if (curSong == 'the-clone') 
 			{
@@ -3473,6 +3472,122 @@ class PlayState extends MusicBeatState
 				changeBF('bfalt');
 			});
 		}
+	function bfattack()
+		{
+			var bfattacking:FlxSprite = new FlxSprite(440, 168);
+			bfattacking.frames = Paths.getSparrowAtlas('scopto/bfalternativeanims');
+			bfattacking.animation.addByPrefix('idle', 'boyfriend attack', 24, false);
+			bfattacking.scrollFactor.set(1, 1);
+			bfattacking.updateHitbox();
+	
+			boyfriend.visible = false;
+			add(bfattacking);
+			bfattacking.animation.play('idle');
+	
+			new FlxTimer().start(0.3, function(Timer:FlxTimer)
+			{
+				remove(bfattacking);
+				boyfriend.visible = true;
+				changeBF('bfalt');
+			});
+		}
+	function bfhit()
+		{
+			var bfattacking:FlxSprite = new FlxSprite(767, 447);
+			bfattacking.frames = Paths.getSparrowAtlas('scopto/bfalternativeanims');
+			bfattacking.animation.addByPrefix('idle', 'BF hit', 24, false);
+			bfattacking.scrollFactor.set(1, 1);
+			bfattacking.updateHitbox();
+	
+			boyfriend.visible = false;
+			add(bfattacking);
+			bfattacking.animation.play('idle');
+	
+			new FlxTimer().start(0.3, function(Timer:FlxTimer)
+			{
+				remove(bfattacking);
+				boyfriend.visible = true;
+				changeBF('bfalt');
+			});
+		}
+	function bfdodge()
+		{
+			var bfdodging:FlxSprite = new FlxSprite(767, 447);
+			bfdodging.frames = Paths.getSparrowAtlas('scopto/bfalternativeanims');
+			bfdodging.animation.addByPrefix('idle', 'boyfriend dodge', 24, false);
+			bfdodging.scrollFactor.set(1, 1);
+			bfdodging.updateHitbox();
+	
+			boyfriend.visible = false;
+			add(bfdodging);
+			bfdodging.animation.play('idle');
+	
+			new FlxTimer().start(0.3, function(Timer:FlxTimer)
+			{
+				remove(bfdodging);
+				boyfriend.visible = true;
+				changeBF('bfalt');
+			});
+		}	
+	function clonestare()
+		{
+			var clonelookingatyou:FlxSprite = new FlxSprite(0, 0);
+			clonelookingatyou.frames = Paths.getSparrowAtlas('scopto/clonealternativeanims');
+			clonelookingatyou.animation.addByPrefix('idle', 'clone stare', 24, false);
+			clonelookingatyou.scrollFactor.set(1, 1);
+			clonelookingatyou.updateHitbox();
+	
+			dad.visible = false;
+			add(clonelookingatyou);
+			clonelookingatyou.animation.play('idle');
+	
+			new FlxTimer().start(2.3, function(Timer:FlxTimer)
+			{
+				remove(clonelookingatyou);
+				dad.visible = true;
+				changeDad('clone');
+			});
+		}
+	function clonepunch()
+		{
+			var clonelookingatyou:FlxSprite = new FlxSprite(0, 0);
+			clonelookingatyou.frames = Paths.getSparrowAtlas('scopto/clonealternativeanims');
+			clonelookingatyou.animation.addByPrefix('idle', 'clone punch', 24, false);
+			clonelookingatyou.scrollFactor.set(1, 1);
+			clonelookingatyou.updateHitbox();
+	
+			dad.visible = false;
+			add(clonelookingatyou);
+			clonelookingatyou.animation.play('idle');
+	
+			new FlxTimer().start(0.3, function(Timer:FlxTimer)
+			{
+				remove(clonelookingatyou);
+				dad.visible = true;
+				changeDad('clone');
+			});
+		}
+	function clonehit()
+		{
+			var clonelookingatyou:FlxSprite = new FlxSprite(0, 0);
+			clonelookingatyou.frames = Paths.getSparrowAtlas('scopto/clonealternativeanims');
+			clonelookingatyou.animation.addByPrefix('idle', 'clone hit', 24, false);
+			clonelookingatyou.scrollFactor.set(1, 1);
+			clonelookingatyou.updateHitbox();
+	
+			dad.visible = false;
+			add(clonelookingatyou);
+			clonelookingatyou.animation.play('idle');
+	
+			new FlxTimer().start(2.3, function(Timer:FlxTimer)
+			{
+				remove(clonelookingatyou);
+				dad.visible = true;
+				changeDad('clone');
+			});
+		}
+	
+	
 	function changeBF(id:String)
 		{
 			var oldx = boyfriend.x;
@@ -3482,5 +3597,15 @@ class PlayState extends MusicBeatState
 			add(boyfriend);
 			iconP1.animation.play(id);
 		}
+	function changeDad(id:String)
+		{
+			var oldx = dad.x;
+			var oldy = dad.y;
+			remove(dad);
+			dad = new Character(oldx, oldy, id);
+			add(dad);
+			iconP2.animation.play(id);
+		}
+		
 	var curLight:Int = 0;
 }
