@@ -3357,15 +3357,14 @@ class PlayState extends MusicBeatState
 			{
 				dad.playAnim('STARE', true);
 			}
-			if (curSong == 'bloxiam') 
+		if (curSong == 'the-clone') 
+			{
+				switch (curBeat)
 				{
-					switch (curBeat)
-					{
-						case 504:
-							boyfriend.playAnim('lookathim', true);
-				}
+					case 502:
+						bflookathim();
 			}
-
+		}
 		if (curBeat % 16 == 15 && SONG.song == 'Tutorial' && dad.curCharacter == 'gf' && curBeat > 16 && curBeat < 48)
 			{
 				boyfriend.playAnim('hey', true);
@@ -3455,6 +3454,33 @@ class PlayState extends MusicBeatState
 			}
 		}
 	}
-
+	function bflookathim()
+		{
+			var bflookatthisretard:FlxSprite = new FlxSprite(767, 447);
+			bflookatthisretard.frames = Paths.getSparrowAtlas('scopto/bflookathim');
+			bflookatthisretard.animation.addByPrefix('idle', 'BF look at this dude woohoohoohoo', 24, false);
+			bflookatthisretard.scrollFactor.set(1, 1);
+			bflookatthisretard.updateHitbox();
+	
+			boyfriend.visible = false;
+			add(bflookatthisretard);
+			bflookatthisretard.animation.play('idle');
+	
+			new FlxTimer().start(2.3, function(Timer:FlxTimer)
+			{
+				remove(bflookatthisretard);
+				boyfriend.visible = true;
+				changeBF('bfalt');
+			});
+		}
+	function changeBF(id:String)
+		{
+			var oldx = boyfriend.x;
+			var oldy = boyfriend.y;
+			remove(boyfriend);
+			boyfriend = new Boyfriend(oldx, oldy, id);
+			add(boyfriend);
+			iconP1.animation.play(id);
+		}
 	var curLight:Int = 0;
 }

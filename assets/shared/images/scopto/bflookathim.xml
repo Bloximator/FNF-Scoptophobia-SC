@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="bflookathim.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="BF look at this dude woohoohoohoo0000" x="0" y="0" width="408" height="412" frameX="-10" frameY="-2" frameWidth="419" frameHeight="414"/>
+	<SubTexture name="BF look at this dude woohoohoohoo0001" x="0" y="0" width="408" height="412" frameX="-10" frameY="-2" frameWidth="419" frameHeight="414"/>
+	<SubTexture name="BF look at this dude woohoohoohoo0002" x="408" y="0" width="408" height="412" frameX="-11" frameY="-2" frameWidth="419" frameHeight="414"/>
+	<SubTexture name="BF look at this dude woohoohoohoo0003" x="408" y="0" width="408" height="412" frameX="-11" frameY="-2" frameWidth="419" frameHeight="414"/>
+	<SubTexture name="BF look at this dude woohoohoohoo0004" x="816" y="0" width="384" height="414" frameX="-13" frameY="0" frameWidth="419" frameHeight="414"/>
+	<SubTexture name="BF look at this dude woohoohoohoo0005" x="816" y="0" width="384" height="414" frameX="-13" frameY="0" frameWidth="419" frameHeight="414"/>
+	<SubTexture name="BF look at this dude woohoohoohoo0006" x="1200" y="0" width="384" height="414" frameX="-13" frameY="0" frameWidth="419" frameHeight="414"/>
+	<SubTexture name="BF look at this dude woohoohoohoo0007" x="1200" y="0" width="384" height="414" frameX="-13" frameY="0" frameWidth="419" frameHeight="414"/>
+	<SubTexture name="BF look at this dude woohoohoohoo0008" x="1200" y="0" width="384" height="414" frameX="-13" frameY="0" frameWidth="419" frameHeight="414"/>
+	<SubTexture name="BF look at this dude woohoohoohoo0009" x="1200" y="0" width="384" height="414" frameX="-13" frameY="0" frameWidth="419" frameHeight="414"/>
+	<SubTexture name="BF look at this dude woohoohoohoo0010" x="1200" y="0" width="384" height="414" frameX="-13" frameY="0" frameWidth="419" frameHeight="414"/>
+	<SubTexture name="BF look at this dude woohoohoohoo0011" x="1584" y="0" width="388" height="414" frameX="-9" frameY="0" frameWidth="419" frameHeight="414"/>
+	<SubTexture name="BF look at this dude woohoohoohoo0012" x="1584" y="0" width="388" height="414" frameX="-9" frameY="0" frameWidth="419" frameHeight="414"/>
+	<SubTexture name="BF look at this dude woohoohoohoo0013" x="0" y="414" width="398" height="414" frameX="0" frameY="0" frameWidth="419" frameHeight="414"/>
+	<SubTexture name="BF look at this dude woohoohoohoo0014" x="0" y="414" width="398" height="414" frameX="0" frameY="0" frameWidth="419" frameHeight="414"/>
+	<SubTexture name="BF look at this dude woohoohoohoo0015" x="398" y="414" width="395" height="414" frameX="-3" frameY="0" frameWidth="419" frameHeight="414"/>
+	<SubTexture name="BF look at this dude woohoohoohoo0016" x="398" y="414" width="395" height="414" frameX="-3" frameY="0" frameWidth="419" frameHeight="414"/>
+	<SubTexture name="BF look at this dude woohoohoohoo0017" x="398" y="414" width="395" height="414" frameX="-3" frameY="0" frameWidth="419" frameHeight="414"/>
+	<SubTexture name="BF look at this dude woohoohoohoo0018" x="398" y="414" width="395" height="414" frameX="-3" frameY="0" frameWidth="419" frameHeight="414"/>
+	<SubTexture name="BF look at this dude woohoohoohoo0019" x="793" y="414" width="395" height="414" frameX="-3" frameY="0" frameWidth="419" frameHeight="414"/>
+	<SubTexture name="BF look at this dude woohoohoohoo0020" x="793" y="414" width="395" height="414" frameX="-3" frameY="0" frameWidth="419" frameHeight="414"/>
+	<SubTexture name="BF look at this dude woohoohoohoo0021" x="0" y="414" width="398" height="414" frameX="0" frameY="0" frameWidth="419" frameHeight="414"/>
+	<SubTexture name="BF look at this dude woohoohoohoo0022" x="0" y="414" width="398" height="414" frameX="0" frameY="0" frameWidth="419" frameHeight="414"/>
+	<SubTexture name="BF look at this dude woohoohoohoo0023" x="398" y="414" width="395" height="414" frameX="-3" frameY="0" frameWidth="419" frameHeight="414"/>
+	<SubTexture name="BF look at this dude woohoohoohoo0024" x="398" y="414" width="395" height="414" frameX="-3" frameY="0" frameWidth="419" frameHeight="414"/>
+	<SubTexture name="BF look at this dude woohoohoohoo0025" x="793" y="414" width="395" height="414" frameX="-3" frameY="0" frameWidth="419" frameHeight="414"/>
+	<SubTexture name="BF look at this dude woohoohoohoo0026" x="793" y="414" width="395" height="414" frameX="-3" frameY="0" frameWidth="419" frameHeight="414"/>
+</TextureAtlas>
