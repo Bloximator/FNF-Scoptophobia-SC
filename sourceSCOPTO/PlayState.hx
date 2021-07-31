@@ -508,11 +508,8 @@ class PlayState extends MusicBeatState
 				dad.y -= 130;
 				dad.scale.set(0.9, 0.9);
 			case 'alife':
-				camPos.y += 100;
-				dad.x -= 50;
-				dad.y -= 20;
-				dad.scale.set(0.7, 0.7);
-				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			dad.y -= 130;	
+			dad.scale.set(0.74, 0.74);
 			case 'bloximator':
 				dad.y -= 100;
 			case 'clone':
@@ -3350,6 +3347,7 @@ class PlayState extends MusicBeatState
 			boyfriend.playAnim('hey', true);
 		}
 		
+		//Scoptophobia Mid-Song Event Animations
 		if (curSong == 'the-clone') 
 			{
 				switch (curBeat)
@@ -3360,37 +3358,34 @@ class PlayState extends MusicBeatState
 						clonestare();
 					case 332:
 						clonestare();
+					case 345:
+						bfreadytokickass();
 					case 502:
 						bflookathim();
 			}
 		}
+		if (curSong == 'bloxiam') 
+			{
+				switch (curBeat)
+				{
+					case 72:
+						boyfriend.playAnim('scared', true);
+					case 76:
+						boyfriend.playAnim('scared', true);
+					case 239:
+						FlxTween.tween(bloxiamhouse, {alpha: 0}, 1);
+						FlxTween.tween(dad, {alpha: 0}, 1);
+						FlxTween.tween(gf, {alpha: 0}, 1.);
+			}
+		}
+
+		/////////////////////////////////////////////////////////////
 		if (curBeat % 16 == 15 && SONG.song == 'Tutorial' && dad.curCharacter == 'gf' && curBeat > 16 && curBeat < 48)
 			{
 				boyfriend.playAnim('hey', true);
 				dad.playAnim('cheer', true);
 			}
 			
-		if (curSong == 'bloxiam')
-		{
-			if (curStep == 72)
-		    {
-	            boyfriend.playAnim('scared', true);
-            }
-			if (curStep == 76)
-		    {
-	            boyfriend.playAnim('scared', true);
-            }
-		if (curSong == 'bloxiam') 
-			{
-				switch (curBeat)
-				{
-					case 239:
-						FlxTween.tween(bloxiamhouse, {alpha: 0}, 1);
-						FlxTween.tween(dad, {alpha: 0}, 1);
-						FlxTween.tween(gf, {alpha: 0}, 1.);
-					}
-			}
-		}
 		switch (curStage)
 		{
 			case 'school':
@@ -3472,6 +3467,26 @@ class PlayState extends MusicBeatState
 				changeBF('bfalt');
 			});
 		}
+	function bfreadytokickass()
+		{
+			var bfbouttakicksomeass:FlxSprite = new FlxSprite(767, 500);
+			bfbouttakicksomeass.frames = Paths.getSparrowAtlas('scopto/bfalternativeanims');
+			bfbouttakicksomeass.animation.addByPrefix('idle', 'bf pre attack', 24, false);
+			bfbouttakicksomeass.scrollFactor.set(1, 1);
+			bfbouttakicksomeass.updateHitbox();
+	
+			boyfriend.visible = false;
+			add(bfbouttakicksomeass);
+			bfbouttakicksomeass.animation.play('idle');
+	
+			new FlxTimer().start(1.7, function(Timer:FlxTimer)
+			{
+				remove(bfbouttakicksomeass);
+				boyfriend.visible = true;
+				changeBF('bfalt');
+			});
+		}
+	
 	function bfattack()
 		{
 			var bfattacking:FlxSprite = new FlxSprite(440, 168);

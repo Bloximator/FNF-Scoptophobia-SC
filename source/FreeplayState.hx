@@ -26,6 +26,7 @@ class FreeplayState extends MusicBeatState
 	var curDifficulty:Int = 1;
 
 	var scoreText:FlxText;
+	var composertext:FlxText;
 	var diffText:FlxText;
 	var lerpScore:Int = 0;
 	var intendedScore:Int = 0;
@@ -107,6 +108,10 @@ class FreeplayState extends MusicBeatState
 		add(diffText);
 
 		add(scoreText);
+
+		composertext = new FlxText(scoreText.x + 92, scoreText.y + 36, 0, "", 21);
+		composertext.font = scoreText.font;
+		add(composertext);
 
 		changeSelection();
 		changeDiff();
@@ -294,7 +299,7 @@ class FreeplayState extends MusicBeatState
 		#end
 
 		#if PRELOAD_ALL
-		FlxG.sound.playMusic(Paths.inst(songs[curSelected].songName), 0);
+
 		#end
 
 		var bullShit:Int = 0;

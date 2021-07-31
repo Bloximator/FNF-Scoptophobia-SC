@@ -563,9 +563,9 @@ class Character extends FlxSprite
 				playAnim('idle');
 				updateHitbox();
 				
-			case 'alife':
+			case 'alifeold':
 				iconColor = "FFec2d58";
-				tex = Paths.getSparrowAtlas('scopto/ALIFE');
+				tex = Paths.getSparrowAtlas('scopto/ALIFEOLD');
 				frames = tex;
 				animation.addByPrefix('idle', 'Idle', 24);
 				animation.addByPrefix('singUP', 'Up', 24);
@@ -581,7 +581,26 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 				updateHitbox();
-				
+			
+			case 'alife':
+				iconColor = "FFec2d58";
+				tex = Paths.getSparrowAtlas('scopto/aliferedo');
+				frames = tex;
+				animation.addByPrefix('idle', 'Alife idle', 24);
+				animation.addByPrefix('singUP', 'Alife up', 24);
+				animation.addByPrefix('singRIGHT', 'Alife right', 24);
+				animation.addByPrefix('singDOWN', 'Alife down', 24);
+				animation.addByPrefix('singLEFT', 'Alife left', 24);
+
+				addOffset('idle', 0, -6);
+				addOffset("singUP", -40, 25);
+				addOffset("singRIGHT", -60, 0);
+				addOffset("singLEFT", 37, -2);
+				addOffset("singDOWN", -62, -22);
+
+				playAnim('idle');
+				updateHitbox();
+					
 			 case 'clone':
 				iconColor = "FFa5a5a5";	
                 tex = Paths.getSparrowAtlas('scopto/clone');

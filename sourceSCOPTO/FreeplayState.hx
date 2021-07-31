@@ -26,6 +26,8 @@ class FreeplayState extends MusicBeatState
 	var curDifficulty:Int = 1;
 
 	var scoreText:FlxText;
+	var composerText:FlxText;
+	var slightlysmallercomposertext:FlxText;
 	var diffText:FlxText;
 	var lerpScore:Int = 0;
 	var intendedScore:Int = 0;
@@ -107,6 +109,14 @@ class FreeplayState extends MusicBeatState
 		add(diffText);
 
 		add(scoreText);
+		
+		composerText = new FlxText(scoreText.x + 92, scoreText.y + 36, 0, "", 24);
+		composerText.font = scoreText.font;
+		add(composerText);
+
+		slightlysmallercomposertext = new FlxText(scoreText.x + 92, scoreText.y + 38, 0, "", 22);
+		slightlysmallercomposertext.font = scoreText.font;
+		add(slightlysmallercomposertext);
 
 		changeSelection();
 		changeDiff();
@@ -295,6 +305,18 @@ class FreeplayState extends MusicBeatState
 
 		#if PRELOAD_ALL
 		FlxG.sound.playMusic(Paths.inst(songs[curSelected].songName), 0);
+		if (songs[curSelected].songName.toLowerCase() == 'gloomy streets' || songs[curSelected].songName.toLowerCase() == 'taking matters'|| songs[curSelected].songName.toLowerCase() == 'the clone')
+		{
+			slightlysmallercomposertext.text = "Composer: WildyThomas";
+		}
+		else if (songs[curSelected].songName.toLowerCase() == "shalos")
+		{
+			slightlysmallercomposertext.text = "Composer: balls";
+		}
+		else if (songs[curSelected].songName.toLowerCase() == "bloxiam")
+		{
+			slightlysmallercomposertext.text = "Composer: Shpeelock";
+		}
 		#end
 
 		var bullShit:Int = 0;
