@@ -593,10 +593,10 @@ class Character extends FlxSprite
 				animation.addByPrefix('singLEFT', 'Alife left', 24);
 
 				addOffset('idle', 0, -6);
-				addOffset("singUP", -40, 25);
-				addOffset("singRIGHT", -60, 0);
-				addOffset("singLEFT", 37, -2);
-				addOffset("singDOWN", -62, -22);
+				addOffset("singUP", -35, 20);
+				addOffset("singRIGHT", -54, 0);
+				addOffset("singLEFT", 24, -2);
+				addOffset("singDOWN", -52, -22);
 
 				playAnim('idle');
 				updateHitbox();
