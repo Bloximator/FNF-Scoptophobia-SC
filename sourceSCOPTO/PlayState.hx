@@ -2195,6 +2195,8 @@ class PlayState extends MusicBeatState
 								if (daNote.noteType == 3)
 									{
 										// the animations are too much for the game to handle sorry bloxiam
+										clonepunch();
+										bfdodge();
 										health -= 0;
 										FlxG.sound.play(Paths.sound('BFDODGE'));	
 									}
@@ -3348,18 +3350,16 @@ class PlayState extends MusicBeatState
 			boyfriend.playAnim('hey', true);
 		}
 		
-		if (curStep == 200 && curSong == 'the-clone')
-            {
-                clonestare();
-            }
-		if (curStep == 1376 && curSong == 'the-clone')
-			{
-				clonestare();
-			}
 		if (curSong == 'the-clone') 
 			{
 				switch (curBeat)
 				{
+					case 16:
+						bflookathim();
+					case 50:
+						clonestare();
+					case 332:
+						clonestare();
 					case 502:
 						bflookathim();
 			}
@@ -3484,7 +3484,7 @@ class PlayState extends MusicBeatState
 			add(bfattacking);
 			bfattacking.animation.play('idle');
 	
-			new FlxTimer().start(0.3, function(Timer:FlxTimer)
+			new FlxTimer().start(0.22, function(Timer:FlxTimer)
 			{
 				remove(bfattacking);
 				boyfriend.visible = true;
@@ -3503,7 +3503,7 @@ class PlayState extends MusicBeatState
 			add(bfattacking);
 			bfattacking.animation.play('idle');
 	
-			new FlxTimer().start(0.3, function(Timer:FlxTimer)
+			new FlxTimer().start(0.12, function(Timer:FlxTimer)
 			{
 				remove(bfattacking);
 				boyfriend.visible = true;
@@ -3522,7 +3522,7 @@ class PlayState extends MusicBeatState
 			add(bfdodging);
 			bfdodging.animation.play('idle');
 	
-			new FlxTimer().start(0.3, function(Timer:FlxTimer)
+			new FlxTimer().start(0.12, function(Timer:FlxTimer)
 			{
 				remove(bfdodging);
 				boyfriend.visible = true;
@@ -3531,7 +3531,7 @@ class PlayState extends MusicBeatState
 		}	
 	function clonestare()
 		{
-			var clonelookingatyou:FlxSprite = new FlxSprite(0, 0);
+			var clonelookingatyou:FlxSprite = new FlxSprite(100, 0);
 			clonelookingatyou.frames = Paths.getSparrowAtlas('scopto/clonealternativeanims');
 			clonelookingatyou.animation.addByPrefix('idle', 'clone stare', 24, false);
 			clonelookingatyou.scrollFactor.set(1, 1);
@@ -3550,38 +3550,38 @@ class PlayState extends MusicBeatState
 		}
 	function clonepunch()
 		{
-			var clonelookingatyou:FlxSprite = new FlxSprite(0, 0);
-			clonelookingatyou.frames = Paths.getSparrowAtlas('scopto/clonealternativeanims');
-			clonelookingatyou.animation.addByPrefix('idle', 'clone punch', 24, false);
-			clonelookingatyou.scrollFactor.set(1, 1);
-			clonelookingatyou.updateHitbox();
+			var clonepunching:FlxSprite = new FlxSprite(0, 0);
+			clonepunching.frames = Paths.getSparrowAtlas('scopto/clonealternativeanims');
+			clonepunching.animation.addByPrefix('idle', 'clone punch', 24, false);
+			clonepunching.scrollFactor.set(1, 1);
+			clonepunching.updateHitbox();
 	
 			dad.visible = false;
-			add(clonelookingatyou);
-			clonelookingatyou.animation.play('idle');
+			add(clonepunching);
+			clonepunching.animation.play('idle');
 	
-			new FlxTimer().start(0.3, function(Timer:FlxTimer)
+			new FlxTimer().start(0.12, function(Timer:FlxTimer)
 			{
-				remove(clonelookingatyou);
+				remove(clonepunching);
 				dad.visible = true;
 				changeDad('clone');
 			});
 		}
 	function clonehit()
 		{
-			var clonelookingatyou:FlxSprite = new FlxSprite(0, 0);
-			clonelookingatyou.frames = Paths.getSparrowAtlas('scopto/clonealternativeanims');
-			clonelookingatyou.animation.addByPrefix('idle', 'clone hit', 24, false);
-			clonelookingatyou.scrollFactor.set(1, 1);
-			clonelookingatyou.updateHitbox();
+			var clonedumbasshit:FlxSprite = new FlxSprite(0, 0);
+			clonedumbasshit.frames = Paths.getSparrowAtlas('scopto/clonealternativeanims');
+			clonedumbasshit.animation.addByPrefix('idle', 'clone hit', 24, false);
+			clonedumbasshit.scrollFactor.set(1, 1);
+			clonedumbasshit.updateHitbox();
 	
 			dad.visible = false;
-			add(clonelookingatyou);
-			clonelookingatyou.animation.play('idle');
+			add(clonedumbasshit);
+			clonedumbasshit.animation.play('idle');
 	
-			new FlxTimer().start(2.3, function(Timer:FlxTimer)
+			new FlxTimer().start(0.2, function(Timer:FlxTimer)
 			{
-				remove(clonelookingatyou);
+				remove(clonedumbasshit);
 				dad.visible = true;
 				changeDad('clone');
 			});
