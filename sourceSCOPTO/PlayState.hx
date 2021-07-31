@@ -508,8 +508,9 @@ class PlayState extends MusicBeatState
 				dad.y -= 130;
 				dad.scale.set(0.9, 0.9);
 			case 'alife':
-			dad.y -= 130;	
-			dad.scale.set(0.74, 0.74);
+				camPos.y -= 50;
+				dad.y -= 130;	
+				dad.scale.set(0.74, 0.74);
 			case 'bloximator':
 				dad.y -= 100;
 			case 'clone':
