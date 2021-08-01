@@ -803,10 +803,13 @@ class PlayState extends MusicBeatState
 		
 		trace('starting');
 
-		if (isStoryMode)
-		{
-			switch (StringTools.replace(curSong," ", "-").toLowerCase())
-			{
+		if (isStoryMode) {
+			if (PauseSubState.PauseSubState.skipped)
+				{
+					PauseSubState.skipped = false;
+					endSong();
+				}
+			switch (curSong.toLowerCase()) {
 				case "winter-horrorland":
 					var blackScreen:FlxSprite = new FlxSprite(0, 0).makeGraphic(Std.int(FlxG.width * 2), Std.int(FlxG.height * 2), FlxColor.BLACK);
 					add(blackScreen);
@@ -2222,6 +2225,11 @@ class PlayState extends MusicBeatState
 										vocals.volume = 0;
 										if (theFunne)
 											noteMiss(daNote.noteData, daNote);
+									if (SONG.song == 'shalos')
+										{
+											bitchevent(1);
+											FlxG.sound.play(Paths.sound('vineboom'));
+										}
 									}
 							}
 		

@@ -21,14 +21,14 @@ class PauseSubState extends MusicBeatSubstate
 {
 	var grpMenuShit:FlxTypedGroup<Alphabet>;
 
-	var menuItems:Array<String> = ['Resume', 'Restart Song', 'Exit to menu'];
+	var menuItems:Array<String> = ['Resume', 'Restart Song', 'Skip Song', 'Exit to menu'];
 	var curSelected:Int = 0;
 
 	var pauseMusic:FlxSound;
 	var perSongOffset:FlxText;
 	
 	var offsetChanged:Bool = false;
-
+	public static var skipped:Bool;
 	public function new(x:Float, y:Float)
 	{
 		super();
@@ -181,6 +181,9 @@ class PauseSubState extends MusicBeatSubstate
 					close();
 				case "Restart Song":
 					FlxG.resetState();
+				case "Skip Song":
+					skipped = true;
+					FlxG.resetState();
 				case "Exit to menu":
 					if(PlayState.loadRep)
 					{
@@ -240,6 +243,7 @@ class PauseSubState extends MusicBeatSubstate
 			{
 				item.alpha = 1;
 				// item.setGraphicSize(Std.int(item.width));
+
 			}
 		}
 	}
