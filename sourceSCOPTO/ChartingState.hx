@@ -1398,8 +1398,7 @@ class ChartingState extends MusicBeatState
 				//hey if yall are struggling with the notes here you go - shalos and quereno pasas el bloxiam tu man siman
 				if (FlxG.keys.pressed.ONE)
 					{
-						noteType = 1;
-						FlxG.sound.play(Paths.sound('ATTACKNOTE'));						
+						noteType = 1;		
 					}
 				if (FlxG.keys.pressed.ALT)
 					{
@@ -1411,6 +1410,12 @@ class ChartingState extends MusicBeatState
 						noteType = 3;
 						FlxG.sound.play(Paths.sound('DEATHNOTE'));
 					}
+				if (FlxG.keys.pressed.CONTROL)
+					{
+						noteType = 4;
+						FlxG.sound.play(Paths.sound('vineboom'));
+					}
+	
 				if (n != null)
 					_song.notes[curSection].sectionNotes.push([n.strumTime, n.noteData, n.sustainLength, n.noteType]);
 				else

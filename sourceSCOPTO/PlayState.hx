@@ -207,6 +207,26 @@ class PlayState extends MusicBeatState
 	
 	// Will decide if she's even allowed to headbang at all depending on the song
 	private var allowedToHeadbang:Bool = false;
+	public function bitchevent(numberlol)
+		{
+			var bitch:FlxSprite = new FlxSprite();
+			if (numberlol == 1)
+			{
+				bitch.loadGraphic(Paths.image('scopto/spinch'));
+			}
+			bitch.antialiasing = true;
+			bitch.active = false;
+			bitch.scrollFactor.set();
+			bitch.screenCenter();
+			add(bitch);
+			FlxTween.tween(bitch, {y: bitch.y += 100, alpha: 0}, Conductor.crochet / 1000, {
+				ease: FlxEase.cubeInOut,
+				onComplete: function(twn:FlxTween)
+				{
+					bitch.destroy();
+				}
+			});
+		}
 	// Per song additive offset
 	public static var songOffset:Float = 0;
 	// BotPlay text
@@ -2085,67 +2105,56 @@ class PlayState extends MusicBeatState
 						}
 		
 	
-					if (!daNote.mustPress && daNote.wasGoodHit)
-					{
-						if (SONG.song != 'Tutorial')
-							camZooming = true;
-
-						var altAnim:String = "";
-	
-						if (SONG.notes[Math.floor(curStep / 16)] != null)
-						{
-							if (SONG.notes[Math.floor(curStep / 16)].altAnim)
-								altAnim = '-alt';
-						}
-	
-						switch (Math.abs(daNote.noteData))
-						{
-							case 2:
-								dad.playAnim('singUP' + altAnim, true);
-							case 3:
-								dad.playAnim('singRIGHT' + altAnim, true);
-							case 1:
-								dad.playAnim('singDOWN' + altAnim, true);
-							case 0:
-								dad.playAnim('singLEFT' + altAnim, true);
-						}
-						
-						if (FlxG.save.data.cpuStrums)
-						{
-							cpuStrums.forEach(function(spr:FlxSprite)
+						if (!daNote.mustPress && daNote.wasGoodHit)
 							{
-								if (Math.abs(daNote.noteData) == spr.ID)
+								if (SONG.song != 'Tutorial')
+									camZooming = true;
+			
+								var altAnim:String = "";
+			
+								if (SONG.notes[Math.floor(curStep / 16)] != null)
 								{
-									spr.animation.play('confirm', true);
+									if (SONG.notes[Math.floor(curStep / 16)].altAnim)
+										altAnim = '-alt';
 								}
-								if (spr.animation.curAnim.name == 'confirm' && !curStage.startsWith('school'))
+			
+								switch (Math.abs(daNote.noteData))
 								{
-									spr.centerOffsets();
-									spr.offset.x -= 13;
-									spr.offset.y -= 13;
+									case 2:
+										dad.playAnim('singUP' + altAnim, true);
+										if (SONG.song == 'shalos')
+										{
+											bitchevent(1);
+										}
+									case 3:
+										dad.playAnim('singRIGHT' + altAnim, true);
+										if (SONG.song == 'shalos')
+										{
+											bitchevent(1);
+										}
+									case 1:
+										dad.playAnim('singDOWN' + altAnim, true);
+										if (SONG.song == 'shalos')
+										{
+											bitchevent(1);
+										}
+									case 0:
+										dad.playAnim('singLEFT' + altAnim, true);
+										if (SONG.song == 'shalos')
+										{
+											bitchevent(1);
+										}
 								}
-								else
-									spr.centerOffsets();
-							});
-						}
-	
-						#if windows
-						if (luaModchart != null)
-							luaModchart.executeState('playerTwoSing', [Math.abs(daNote.noteData), Conductor.songPosition]);
-						#end
-
-						dad.holdTimer = 0;
-	
-						if (SONG.needsVoices)
-							vocals.volume = 1;
-	
-						daNote.active = false;
-
-
-						daNote.kill();
-						notes.remove(daNote, true);
-						daNote.destroy();
-					}
+			
+								dad.holdTimer = 0;
+			
+								if (SONG.needsVoices)
+									vocals.volume = 1;
+			
+								daNote.kill();
+								notes.remove(daNote, true);
+								daNote.destroy();
+							}
 
 					if (daNote.mustPress && !daNote.modifiedByLua)
 					{
@@ -2192,12 +2201,21 @@ class PlayState extends MusicBeatState
 									}
 								if (daNote.noteType == 3)
 									{
-										// the animations are too much for the game to handle sorry bloxiam
+										// nvm
 										clonepunch();
 										bfdodge();
 										health -= 0;
 										FlxG.sound.play(Paths.sound('BFDODGE'));	
 									}
+								if (daNote.noteType == 4)
+									{
+										// IH ATE YOU
+										health -= 0.075;
+										vocals.volume = 0;
+										bfsadashell();
+										FlxG.sound.play(Paths.sound('vineboom'));	
+									}
+																
 								if (daNote.noteType == 1 || daNote.noteType == 0)
 									{
 										health -= 0.075;
@@ -2412,6 +2430,13 @@ class PlayState extends MusicBeatState
 								health -= 100;
 								FlxG.sound.play(Paths.sound('BFHIT'));
 							}
+						if (daNote.noteType == 4)
+							{
+								health += 0.2;
+								FlxG.sound.play(Paths.sound('vineboom'));
+								bfsadashell();
+								bitchevent(1);
+							}
 						if (daNote.noteType == 1 || daNote.noteType == 0)
 							{
 								score = -300;
@@ -2434,6 +2459,13 @@ class PlayState extends MusicBeatState
 								health -= 100;
 								FlxG.sound.play(Paths.sound('BFHIT'));
 							}
+						if (daNote.noteType == 4)
+							{
+								health += 0.06;
+								FlxG.sound.play(Paths.sound('vineboom'));
+								bfsadashell();
+								bitchevent(1);
+							}
 						if (daNote.noteType == 1 || daNote.noteType == 0)
 							{
 								daRating = 'bad';
@@ -2454,6 +2486,13 @@ class PlayState extends MusicBeatState
 							{
 								health -= 100;
 								FlxG.sound.play(Paths.sound('BFHIT'));
+							}
+						if (daNote.noteType == 4)
+							{
+								health += 0.08;
+								FlxG.sound.play(Paths.sound('vineboom'));
+								bfsadashell();
+								bitchevent(1);
 							}
 						if (daNote.noteType == 1 || daNote.noteType == 0)
 							{
@@ -2476,6 +2515,13 @@ class PlayState extends MusicBeatState
 							{
 								health -= 100;
 								FlxG.sound.play(Paths.sound('BFHIT'));
+							}
+						if (daNote.noteType == 4)
+							{
+								health += 0.08;
+								FlxG.sound.play(Paths.sound('vineboom'));
+								bfsadashell();
+								bitchevent(1);
 							}
 						if (daNote.noteType == 1 || daNote.noteType == 0)
 							{
@@ -3468,6 +3514,26 @@ class PlayState extends MusicBeatState
 				changeBF('bfalt');
 			});
 		}
+	function bfsadashell()
+		{
+			var bfsadashell:FlxSprite = new FlxSprite(888, 357);
+			bfsadashell.frames = Paths.getSparrowAtlas('scopto/bfalternativeanims');
+			bfsadashell.animation.addByPrefix('idle', 'BF sad as hell', 24, false);
+			bfsadashell.scrollFactor.set(1, 1);
+			bfsadashell.updateHitbox();
+	
+			boyfriend.visible = false;
+			add(bfsadashell);
+			bfsadashell.animation.play('idle');
+	
+			new FlxTimer().start(1, function(Timer:FlxTimer)
+			{
+				remove(bfsadashell);
+				boyfriend.visible = true;
+				changeBF('bf');
+			});
+		}
+	
 	function bfreadytokickass()
 		{
 			var bfbouttakicksomeass:FlxSprite = new FlxSprite(767, 500);
@@ -3480,7 +3546,7 @@ class PlayState extends MusicBeatState
 			add(bfbouttakicksomeass);
 			bfbouttakicksomeass.animation.play('idle');
 	
-			new FlxTimer().start(1.7, function(Timer:FlxTimer)
+			new FlxTimer().start(1.6, function(Timer:FlxTimer)
 			{
 				remove(bfbouttakicksomeass);
 				boyfriend.visible = true;
@@ -3545,6 +3611,7 @@ class PlayState extends MusicBeatState
 				changeBF('bfalt');
 			});
 		}	
+
 	function clonestare()
 		{
 			var clonelookingatyou:FlxSprite = new FlxSprite(100, 0);
