@@ -214,6 +214,19 @@ class PlayState extends MusicBeatState
 			{
 				bitch.loadGraphic(Paths.image('scopto/spinch'));
 			}
+			if (numberlol == 2)
+			{
+				bitch.loadGraphic(Paths.image('scopto/blosiam'));
+			}
+			if (numberlol == 3)
+			{
+				bitch.loadGraphic(Paths.image('scopto/habmi vers bobi'));
+			}
+			if (numberlol == 4)
+			{
+				bitch.loadGraphic(Paths.image('scopto/SDTYOP BOSTING UHG'));
+			}
+									
 			bitch.antialiasing = true;
 			bitch.active = false;
 			bitch.scrollFactor.set();
@@ -2133,19 +2146,19 @@ class PlayState extends MusicBeatState
 										dad.playAnim('singRIGHT' + altAnim, true);
 										if (SONG.song == 'shalos')
 										{
-											bitchevent(1);
+											bitchevent(2);
 										}
 									case 1:
 										dad.playAnim('singDOWN' + altAnim, true);
 										if (SONG.song == 'shalos')
 										{
-											bitchevent(1);
+											bitchevent(3);
 										}
 									case 0:
 										dad.playAnim('singLEFT' + altAnim, true);
 										if (SONG.song == 'shalos')
 										{
-											bitchevent(1);
+											bitchevent(4);
 										}
 								}
 			
@@ -2215,8 +2228,6 @@ class PlayState extends MusicBeatState
 										// IH ATE YOU
 										health -= 0.075;
 										vocals.volume = 0;
-										bfsadashell();
-										FlxG.sound.play(Paths.sound('vineboom'));	
 									}
 																
 								if (daNote.noteType == 1 || daNote.noteType == 0)
@@ -2227,6 +2238,7 @@ class PlayState extends MusicBeatState
 											noteMiss(daNote.noteData, daNote);
 									if (SONG.song == 'shalos')
 										{
+											bfsadashell();
 											bitchevent(1);
 											FlxG.sound.play(Paths.sound('vineboom'));
 										}
