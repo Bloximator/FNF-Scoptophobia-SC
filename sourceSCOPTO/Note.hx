@@ -99,7 +99,7 @@ class Note extends FlxSprite
 					updateHitbox();
 				default:
 						//i fucking hate this code (not really)
-						frames = Paths.getSparrowAtlas('NOTE_assets');
+						frames = Paths.getSparrowAtlas('scopto/NOTE_assets_custom');
 						var fuckingSussy = Paths.getSparrowAtlas('danger_notes');
 						for(amogus in fuckingSussy.frames)
 							{
@@ -177,7 +177,7 @@ class Note extends FlxSprite
 							
 							default:
 							{
-								frames = Paths.getSparrowAtlas('NOTE_assets');
+								frames = Paths.getSparrowAtlas('scopto/NOTE_assets_custom');
 								animation.addByPrefix('greenScroll', 'green0');
 								animation.addByPrefix('redScroll', 'red0');
 								animation.addByPrefix('blueScroll', 'blue0');
