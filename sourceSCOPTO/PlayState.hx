@@ -542,7 +542,8 @@ class PlayState extends MusicBeatState
 				dad.scale.set(0.9, 0.9);
 			case 'alife':
 				camPos.y -= 50;
-				dad.y -= 130;	
+				dad.x -= 100;
+				dad.y -= 100;	
 				dad.scale.set(0.74, 0.74);
 			case 'bloximator':
 				dad.y -= 100;
@@ -2421,7 +2422,7 @@ class PlayState extends MusicBeatState
 			vocals.volume = 1;
 	
 			var placement:String = Std.string(combo);
-	
+
 			var coolText:FlxText = new FlxText(0, 0, 0, placement, 32);
 			coolText.screenCenter();
 			coolText.x = FlxG.width * 0.55;
@@ -2437,6 +2438,31 @@ class PlayState extends MusicBeatState
 
 			var daRating = daNote.rating;
 
+			//Sue me
+			var splash:FlxSprite = new FlxSprite(daNote.x, playerStrums.members[daNote.noteData].y);
+			if (!curStage.startsWith('school'))
+			{
+				var tex:flixel.graphics.frames.FlxAtlasFrames = Paths.getSparrowAtlas('noteSplashes', 'shared');
+				splash.frames = tex;
+				splash.animation.addByPrefix('splash 0 0', 'note impact 1 purple', 24, false);
+				splash.animation.addByPrefix('splash 0 1', 'note impact 1 blue', 24, false);
+				splash.animation.addByPrefix('splash 0 2', 'note impact 1 green', 24, false);
+				splash.animation.addByPrefix('splash 0 3', 'note impact 1 red', 24, false);
+				splash.animation.addByPrefix('splash 1 0', 'note impact 2 purple', 24, false);
+				splash.animation.addByPrefix('splash 1 1', 'note impact 2 blue', 24, false);
+				splash.animation.addByPrefix('splash 1 2', 'note impact 2 green', 24, false);
+				splash.animation.addByPrefix('splash 1 3', 'note impact 2 red', 24, false);
+				if (daRating == 'sick')
+				{
+					add(splash);
+					splash.cameras = [camHUD];
+					splash.animation.play('splash ' + FlxG.random.int(0, 1) + " " + daNote.noteData);
+					splash.alpha = 0.6;
+					splash.offset.x += 90;
+					splash.offset.y += 80;
+					splash.animation.finishCallback = function(name) splash.kill();
+				}
+			}
 			switch(daRating)
 			{
 					case 'shit':
