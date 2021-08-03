@@ -99,7 +99,7 @@ class Note extends FlxSprite
 					updateHitbox();
 				default:
 						//i fucking hate this code (not really)
-						frames = Paths.getSparrowAtlas('scopto/NOTE_assets_custom');
+						frames = Paths.getSparrowAtlas('NOTE_assets');
 						var fuckingSussy = Paths.getSparrowAtlas('danger_notes');
 						for(amogus in fuckingSussy.frames)
 							{
