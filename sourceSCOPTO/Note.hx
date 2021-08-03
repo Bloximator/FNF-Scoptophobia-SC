@@ -177,7 +177,7 @@ class Note extends FlxSprite
 							
 							default:
 							{
-								frames = Paths.getSparrowAtlas('scopto/NOTE_assets_custom');
+								frames = Paths.getSparrowAtlas('NOTE_assets');
 								animation.addByPrefix('greenScroll', 'green0');
 								animation.addByPrefix('redScroll', 'red0');
 								animation.addByPrefix('blueScroll', 'blue0');
