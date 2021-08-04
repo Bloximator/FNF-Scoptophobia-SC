@@ -543,6 +543,24 @@ class Character extends FlxSprite
 				addOffset("singDOWN");
 
 				playAnim('idle');
+			case 'retard':
+				// i fucking hate him
+				iconColor = "A1A1A1";
+				tex = Paths.getSparrowAtlas('scopto/ron', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'Idle', 24);
+				animation.addByPrefix('singUP', 'Sing Up', 24);
+				animation.addByPrefix('singRIGHT', 'Sing Right', 24);
+				animation.addByPrefix('singDOWN', 'Sing Down', 24);
+				animation.addByPrefix('singLEFT', 'Sing Left', 24);
+
+				addOffset('idle');
+				addOffset("singUP", 42, 38);
+				addOffset("singLEFT", 98, -27);
+				addOffset("singRIGHT", -89, -51);
+				addOffset("singDOWN", 40, -120);
+
+				playAnim('idle');
 				
 			case 'shpeeold':
 				iconColor = "FFa5a5a5";	

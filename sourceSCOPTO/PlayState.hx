@@ -549,6 +549,8 @@ class PlayState extends MusicBeatState
 				dad.y -= 100;
 			case 'clone':
 				dad.y -= 100;
+			case 'retard':
+				dad.y -= 236;
 		}
 		
 		boyfriend = new Boyfriend(770, 450, SONG.player1);
