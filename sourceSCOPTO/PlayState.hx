@@ -609,7 +609,7 @@ class PlayState extends MusicBeatState
 				gf.x += 350;
 				gf.y += -140;
 			case 'streetclones':
-				gf.visible = false;
+				//ass
 			case 'shalosbg':
 				gf.visible = false;
 				dad.x -= 0;
