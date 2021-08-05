@@ -2340,8 +2340,14 @@ class PlayState extends MusicBeatState
 				{
 					MainMenuState.reRoll = true;
 					
-					LoadingState.loadAndSwitchState(new VideoState("assets/videos/the-afterclone/vid.webm", new MainMenuState()));
-
+					if (SONG.song == 'the-clone')
+					{
+						LoadingState.loadAndSwitchState(new VideoState("assets/videos/the-afterclone/vid.webm", new MainMenuState()));
+					}
+					else
+					{
+						FlxG.switchState(new MainMenuState());
+					}
 					if (storyDifficulty == 2)
 					FlxG.save.data.beatenHard = true;
 				if (storyDifficulty >= 1)
