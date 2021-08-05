@@ -627,20 +627,12 @@ class Character extends FlxSprite
                 animation.addByPrefix('singRIGHT', 'clone right', 24);
                 animation.addByPrefix('singDOWN', 'clone down', 24);
                 animation.addByPrefix('singLEFT', 'clone left', 24);
-				animation.addByPrefix('HIT', 'clone hit', 24, false);
-				animation.addByPrefix('PUNCH', 'clone punch', 24, false);
-				animation.addByPrefix('WINDUP', 'clone windup', 24);
-				animation.addByPrefix('STARE', 'clone stare', 24, false);
 
                 addOffset('idle', 0, 0);
                 addOffset("singUP", 0, 80);
                 addOffset("singRIGHT", 0, -80);
                 addOffset("singLEFT", 102, -20);
                 addOffset("singDOWN", 0, -90);
-				addOffset("HIT", 60, 0);
-				addOffset("PUNCH", 0, 150);
-				addOffset("WINDUP", 120, 190);
-				addOffset("STARE", -20, -8);
 
                 playAnim('idle');
 			case 'shpee':
