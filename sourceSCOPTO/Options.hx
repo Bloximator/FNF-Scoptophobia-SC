@@ -240,6 +240,26 @@ class ResetButtonOption extends Option
 		return "Reset Button " + (!FlxG.save.data.resetButton ? "off" : "on");
 	}
 }
+class NoteSplash extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		FlxG.save.data.splash = !FlxG.save.data.splash;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return FlxG.save.data.splash ? "Note Splash" : "Note Splash off";
+	}
+}
 
 class FlashingLightsOption extends Option
 {

@@ -2025,6 +2025,7 @@ class PlayState extends MusicBeatState
 				}
 		}
 
+	
 		if (unspawnNotes[0] != null)
 		{
 			if (unspawnNotes[0].strumTime - Conductor.songPosition < 3500)
@@ -2465,12 +2466,19 @@ class PlayState extends MusicBeatState
 					add(splash);
 					splash.cameras = [camHUD];
 					splash.animation.play('splash ' + FlxG.random.int(0, 1) + " " + daNote.noteData);
-					splash.alpha = 0.6;
+					splash.visible = false;
+					splash.alpha = 0.7;
 					splash.offset.x += 90;
 					splash.offset.y += 80;
 					splash.animation.finishCallback = function(name) splash.kill();
 				}
 			}
+			if (FlxG.save.data.splash)
+				{
+						{
+							splash.visible = true;
+						}
+				}
 			switch(daRating)
 			{
 					case 'shit':
